@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Renova",
+  "description": "Website institucional moderno e elegante para serviços profissionais de reforma, impermeabilização e engenharia de piscinas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
