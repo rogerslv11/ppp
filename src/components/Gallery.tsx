@@ -130,28 +130,45 @@ export default function Gallery() {
   };
 
   return (
-    <section id="antes-depois" className="py-20 sm:py-28 bg-white relative overflow-hidden">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="antes-depois" className="py-24 sm:py-32 bg-white relative overflow-hidden">
+      {/* Blueprint grid background */}
+      <div 
+        className="absolute inset-0 opacity-[0.025] pointer-events-none" 
+        style={{ 
+          backgroundImage: `
+            radial-gradient(#0077FF 1.5px, transparent 1.5px),
+            linear-gradient(to right, rgba(0,119,255,0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,119,255,0.15) 1px, transparent 1px)
+          `, 
+          backgroundSize: '32px 32px, 160px 160px, 160px 160px' 
+        }} 
+      />
+
+      {/* Decorative Blur Background Bubbles */}
+      <div className="absolute top-1/4 -right-40 w-[400px] h-[400px] bg-blue-100/20 rounded-full filter blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-40 w-[450px] h-[450px] bg-cyan-100/25 rounded-full filter blur-3xl pointer-events-none" />
+
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-bold tracking-widest text-primary uppercase font-mono flex items-center justify-center gap-1.5">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase font-mono px-3.5 py-1.5 bg-blue-50 border border-blue-100 rounded-full inline-flex items-center gap-1.5">
             <Award className="w-3.5 h-3.5" />
             Casos de Sucesso
           </span>
-          <h2 className="font-display font-bold text-3xl sm:text-4.5xl text-slate-900 tracking-tight mt-2">
+          <h2 className="font-display font-extrabold text-3xl sm:text-4.5xl text-slate-900 tracking-tight mt-6 leading-none">
             Laudos de Obra & Casos Reais
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-4 mx-auto" />
+          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-5 mx-auto" />
           
           {/* Main Category Selector */}
-          <div className="mt-8 flex items-center justify-center gap-2 p-1 bg-slate-100 rounded-2xl max-w-sm mx-auto border border-slate-200">
+          <div className="mt-8 flex items-center justify-center gap-2 p-1.5 bg-slate-100 border border-slate-200/60 rounded-2xl max-w-sm mx-auto shadow-sm">
             <button
               onClick={() => setActiveTab('antes-depois')}
-              className={`flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer ${
+              className={`flex-1 py-3 text-xs sm:text-sm font-bold rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer ${
                 activeTab === 'antes-depois'
-                  ? 'bg-white text-primary shadow-sm'
-                  : 'text-slate-500 hover:text-slate-800'
+                  ? 'bg-white text-primary shadow-md border border-slate-100'
+                  : 'text-slate-500 hover:text-slate-850 hover:bg-white/40'
               }`}
             >
               <Layers className="w-4 h-4" />
@@ -159,10 +176,10 @@ export default function Gallery() {
             </button>
             <button
               onClick={() => setActiveTab('portfolio')}
-              className={`flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer ${
+              className={`flex-1 py-3 text-xs sm:text-sm font-bold rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer ${
                 activeTab === 'portfolio'
-                  ? 'bg-white text-primary shadow-sm'
-                  : 'text-slate-500 hover:text-slate-800'
+                  ? 'bg-white text-primary shadow-md border border-slate-100'
+                  : 'text-slate-500 hover:text-slate-850 hover:bg-white/40'
               }`}
             >
               <ImageIcon className="w-4 h-4" />

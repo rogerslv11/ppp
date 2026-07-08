@@ -100,8 +100,8 @@ export default function Header({ onNavClick, currentPage, onPageChange }: Header
         id="main-header"
         className={`fixed left-0 right-0 mx-auto w-[95%] sm:w-[92%] max-w-7xl z-40 rounded-2xl transition-all duration-500 ${
           isScrolled 
-            ? 'glass-header shadow-lg py-2.5 top-3 border border-white/30 shadow-blue-500/5' 
-            : 'bg-white/40 backdrop-blur-md border border-white/10 py-4 top-4'
+            ? 'glass-header py-2.5 top-3' 
+            : 'glass-header-top py-3.5 top-4'
         }`}
       >
         <div className="px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -125,20 +125,27 @@ export default function Header({ onNavClick, currentPage, onPageChange }: Header
           </div>
 
           {/* Desktop Navigation (Exactly 6 Links) */}
-          <nav className="hidden lg:flex items-center gap-1 bg-slate-100/50 p-1 rounded-xl border border-slate-200/20">
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-900/5 backdrop-blur-md p-1 rounded-xl border border-slate-200/10">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => handleNavClickInternal(item.id)}
-                  className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all duration-300 relative cursor-pointer ${
+                  className={`px-4.5 py-2 text-xs font-bold rounded-lg transition-all duration-300 relative cursor-pointer ${
                     isActive 
-                      ? 'text-primary bg-white shadow-sm' 
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
+                      ? 'text-primary' 
+                      : 'text-slate-600 hover:text-slate-950'
                   }`}
                 >
-                  {item.label}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNavTab"
+                      className="absolute inset-0 bg-white rounded-lg shadow-sm -z-10 border border-slate-100"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{item.label}</span>
                 </button>
               );
             })}
@@ -148,7 +155,7 @@ export default function Header({ onNavClick, currentPage, onPageChange }: Header
           <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={() => handleNavClickInternal('contato')}
-              className="px-4 py-2 text-xs font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 rounded-xl shadow-sm transition-all duration-200 cursor-pointer"
+              className="px-4.5 py-2.5 text-xs font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 rounded-xl shadow-sm transition-all duration-300 cursor-pointer hover:scale-[1.02] active:scale-100"
             >
               Orçamento Rápido
             </button>
@@ -156,7 +163,7 @@ export default function Header({ onNavClick, currentPage, onPageChange }: Header
               href="https://wa.me/5551999999999?text=Ol%C3%A1%21+Gostaria+de+solicitar+um+or%C3%A7amento+de+engenharia+para+minha+piscina."
               target="_blank"
               referrerPolicy="no-referrer"
-              className="flex items-center gap-2 px-4.5 py-2 text-xs font-bold text-white bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-md shadow-green-500/10 rounded-xl transition-all duration-200 group cursor-pointer"
+              className="flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-md shadow-green-500/15 rounded-xl transition-all duration-300 group cursor-pointer hover:scale-[1.02] hover:shadow-green-500/25 active:scale-100"
             >
               <Phone className="w-3.5 h-3.5 group-hover:animate-bounce" />
               <span>Falar no WhatsApp</span>

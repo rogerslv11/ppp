@@ -18,9 +18,9 @@ export default function Hero({ onCtaClick }: HeroProps) {
 
   const stats: StatItem[] = [
     { value: '20+', label: 'Anos na Construção', suffix: '' },
-    { value: '500+', label: 'Piscinas Reformadas', suffix: '' },
-    { value: '100%', label: 'Garantia de Estanqueidade', suffix: '' },
-    { value: 'Região', label: 'Metropolitana Atendida', suffix: '' },
+    { value: '500+', label: 'Obras Entregues', suffix: '' },
+    { value: '100%', label: 'Estanqueidade Garantida', suffix: '' },
+    { value: 'CREA-RS', label: 'Responsabilidade Técnica (ART)', suffix: '' },
   ];
 
   // Auto slide effect
@@ -51,13 +51,13 @@ export default function Hero({ onCtaClick }: HeroProps) {
         </AnimatePresence>
         
         {/* Multilayer premium dark blue & deep slate ambient overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-soft via-transparent to-slate-950/30" />
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-brand-dark/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/75 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/30" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-brand-dark/45 to-transparent" />
         
         {/* Animated aquatic wave background pattern */}
         <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden z-10 select-none pointer-events-none">
-          <svg className="absolute bottom-0 w-full h-12 text-bg-soft" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <svg className="absolute bottom-0 w-full h-12 text-slate-50" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0 C150,90 350,10 500,60 C650,110 850,20 1000,70 C1150,120 1250,50 1300,30 L1300,120 L0,120 Z" fill="currentColor"></path>
           </svg>
         </div>
@@ -71,10 +71,13 @@ export default function Hero({ onCtaClick }: HeroProps) {
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/25 backdrop-blur-xl mb-6 shadow-sm hover:border-blue-400/40 transition-colors duration-300 cursor-default"
+            className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full bg-slate-950/60 border border-white/10 backdrop-blur-xl mb-8 shadow-xl hover:border-blue-500/20 transition-all duration-300 cursor-default"
           >
-            <Shield className="w-4 h-4 text-accent animate-pulse" />
-            <span className="text-[11px] font-bold tracking-widest text-blue-200 font-mono uppercase">
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-slate-100 font-mono uppercase">
               Engenharia e Impermeabilização de Elite
             </span>
           </motion.div>
@@ -84,13 +87,13 @@ export default function Hero({ onCtaClick }: HeroProps) {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12] sm:leading-none"
+            className="font-display font-extrabold text-4xl sm:text-5.5xl lg:text-6.5xl text-white tracking-tight leading-[1.1]"
           >
             Sua Piscina Sempre <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-blue-200 to-white font-extrabold pb-1 inline-block">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-blue-200 to-white font-black pb-1 inline-block">
               Segura, Estanque & Linda
             </span> <br />
-            Mais de 20 Anos de Confiança.
+            Com Resguardo de Engenharia.
           </motion.h1>
 
           {/* Subtitle */}
@@ -98,7 +101,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 text-base sm:text-lg text-slate-300/90 font-medium leading-relaxed max-w-2xl"
+            className="mt-6 text-sm sm:text-base lg:text-lg text-slate-300 font-medium leading-relaxed max-w-2xl"
           >
             Especialistas em reformas estruturais de piscinas, impermeabilização com fibra de vidro, correção de vazamentos graves e revitalização com engenharia e garantia contratual.
           </motion.p>
@@ -112,10 +115,10 @@ export default function Hero({ onCtaClick }: HeroProps) {
           >
             <button
               onClick={() => onCtaClick('contato')}
-              className="flex items-center justify-center gap-2.5 px-8 py-4.5 text-base font-bold text-white bg-primary hover:bg-primary-dark shadow-xl shadow-primary/25 hover:shadow-primary/45 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group"
+              className="flex items-center justify-center gap-2.5 px-8 py-4.5 text-xs sm:text-sm font-bold text-white bg-primary hover:bg-primary-dark shadow-xl shadow-primary/20 hover:shadow-primary/40 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group"
             >
               <Calendar className="w-5 h-5 text-accent group-hover:rotate-6 transition-transform" />
-              <span>Solicitar Visita Técnica</span>
+              <span>Solicitar Avaliação Técnica</span>
               <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
             </button>
 
@@ -123,7 +126,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
               href="https://wa.me/5551999999999?text=Ol%C3%A1%21+Gostaria+de+solicitar+um+or%C3%A7amento+de+engenharia+para+reforma+ou+impermeabiliza%C3%A7%C3%A3o+de+piscina."
               target="_blank"
               referrerPolicy="no-referrer"
-              className="flex items-center justify-center gap-2.5 px-8 py-4.5 text-base font-bold text-slate-900 bg-white hover:bg-slate-50 border border-white hover:border-slate-100 shadow-lg hover:-translate-y-0.5 active:translate-y-0 rounded-2xl transition-all duration-300 group"
+              className="flex items-center justify-center gap-2.5 px-8 py-4.5 text-xs sm:text-sm font-bold text-slate-900 bg-white hover:bg-slate-50 border border-white hover:border-slate-100 shadow-lg hover:-translate-y-0.5 active:translate-y-0 rounded-2xl transition-all duration-300 group"
             >
               <Phone className="w-5 h-5 text-emerald-500 fill-emerald-500/20 group-hover:scale-110 transition-transform" />
               <span>Falar com Engenharia</span>
@@ -135,19 +138,19 @@ export default function Hero({ onCtaClick }: HeroProps) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 flex flex-wrap items-center gap-6 text-slate-400 font-medium text-xs sm:text-sm"
+            className="mt-8 flex flex-wrap items-center gap-6 text-slate-400 font-medium text-xs"
           >
             <div className="flex items-center gap-2 hover:text-white transition-colors duration-300 cursor-default">
               <div className="w-6 h-6 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
                 <Award className="w-3.5 h-3.5 text-accent" />
               </div>
-              <span>Laudo de Estanqueidade (ART)</span>
+              <span>Laudo de Estanqueidade com ART</span>
             </div>
             <div className="flex items-center gap-2 hover:text-white transition-colors duration-300 cursor-default">
               <div className="w-6 h-6 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
                 <Users className="w-3.5 h-3.5 text-accent" />
               </div>
-              <span>Equipe Própria Certificada</span>
+              <span>Equipe Técnica Própria Certificada</span>
             </div>
           </motion.div>
         </div>
@@ -171,7 +174,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
               }
             }
           }}
-          className="bg-gradient-to-r from-blue-900 to-primary-dark border border-blue-400/30 grid grid-cols-2 md:grid-cols-4 gap-6 p-6 sm:p-8 rounded-3xl shadow-xl shadow-primary/10"
+          className="bg-slate-950/65 backdrop-blur-xl border border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 p-6 sm:p-8 rounded-3.5xl shadow-2xl shadow-black/40"
         >
           {stats.map((stat, idx) => (
             <motion.div 
@@ -186,13 +189,13 @@ export default function Hero({ onCtaClick }: HeroProps) {
                 }
               }}
               className={`flex flex-col items-center justify-center text-center p-2 transition-all duration-300 hover:scale-105 ${
-                idx !== stats.length - 1 ? 'border-r-0 border-b border-white/10 pb-6 md:pb-2 md:border-b-0 md:border-r md:border-white/20' : ''
+                idx !== stats.length - 1 ? 'border-r-0 border-b border-white/5 pb-6 md:pb-2 md:border-b-0 md:border-r md:border-white/10' : ''
               }`}
             >
               <span className="font-display font-black text-2xl sm:text-3.5xl lg:text-4.5xl text-white tracking-tight">
                 {stat.value}
               </span>
-              <span className="mt-2 text-xs sm:text-sm font-semibold text-white/90 tracking-wide">
+              <span className="mt-2 text-xs font-semibold text-slate-300/90 tracking-wide leading-normal">
                 {stat.label}
               </span>
             </motion.div>

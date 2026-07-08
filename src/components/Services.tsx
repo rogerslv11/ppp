@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Sparkles, 
@@ -12,8 +12,17 @@ import {
   ArrowRight, 
   X, 
   CheckCircle2, 
-  MessageSquare 
+  MessageSquare,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
 import { Service } from '../types';
 import { servicesData } from '../mockData';
 
@@ -39,9 +48,9 @@ function ServiceCard({ service, onClick, renderIcon }: ServiceCardProps) {
 
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    // Calculate tilt: subtle angles of up to 12 degrees
-    const rotateX = ((centerY - y) / centerY) * 12;
-    const rotateY = ((x - centerX) / centerX) * 12;
+    // Calculate tilt: subtle angles of up to 8 degrees for clean premium feel
+    const rotateX = ((centerY - y) / centerY) * 8;
+    const rotateY = ((x - centerX) / centerX) * 8;
 
     setTilt({ x: rotateX, y: rotateY });
   };
@@ -51,6 +60,21 @@ function ServiceCard({ service, onClick, renderIcon }: ServiceCardProps) {
     setTilt({ x: 0, y: 0 });
   };
 
+  // Dedicated badge for technical focus
+  const getServiceBadge = (id: number) => {
+    switch (id) {
+      case 1: return "ESTRUTURAL";
+      case 2: return "RESTAURAÇÃO";
+      case 3: return "IMPERMEABILIZAÇÃO";
+      case 4: return "DIAGNÓSTICO";
+      case 5: return "CONCRETO ARMADO";
+      case 6: return "SISTEMAS COLETIVOS";
+      case 7: return "HIDRÁULICA PREMIUM";
+      case 8: return "DESIGN EXTERNO";
+      default: return "ENGENHARIA";
+    }
+  };
+
   return (
     <div
       onClick={onClick}
@@ -58,52 +82,63 @@ function ServiceCard({ service, onClick, renderIcon }: ServiceCardProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
       style={{
-        transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(${isHovered ? 1.025 : 1}, ${isHovered ? 1.025 : 1}, 1)`,
+        transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(${isHovered ? 1.015 : 1}, ${isHovered ? 1.015 : 1}, 1)`,
         transition: isHovered ? 'transform 0.08s ease-out, shadow 0.3s ease' : 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), shadow 0.5s ease',
         transformStyle: 'preserve-3d',
       }}
-      className="gsap-stagger-item group relative bg-white rounded-3xl p-6 sm:p-7 border border-slate-100 hover:border-primary/25 hover:shadow-2xl hover:shadow-blue-500/10 cursor-pointer flex flex-col justify-between overflow-hidden"
+      className="gsap-stagger-item group relative bg-white rounded-3xl p-5 border border-slate-100 hover:border-primary/20 hover:shadow-2xl hover:shadow-blue-500/5 cursor-pointer flex flex-col justify-between h-full overflow-hidden"
     >
       {/* Glare/Shine Effect Spotlight */}
       <div
         className="pointer-events-none absolute inset-0 transition-opacity duration-300 z-10"
         style={{
-          opacity: isHovered ? 0.6 : 0,
-          background: `radial-gradient(circle 140px at ${coords.x}px ${coords.y}px, rgba(14, 165, 233, 0.16), transparent 80%)`,
+          opacity: isHovered ? 0.5 : 0,
+          background: `radial-gradient(circle 140px at ${coords.x}px ${coords.y}px, rgba(14, 165, 233, 0.12), transparent 85%)`,
         }}
       />
       
-      {/* Secondary premium subtle ambient white shine */}
-      <div
-        className="pointer-events-none absolute inset-0 transition-opacity duration-500 z-10"
-        style={{
-          opacity: isHovered ? 0.4 : 0,
-          background: `radial-gradient(circle 240px at ${coords.x}px ${coords.y}px, rgba(255, 255, 255, 0.25), transparent 100%)`,
-        }}
-      />
+      <div style={{ transform: 'translateZ(20px)' }} className="transition-transform duration-300 flex-grow flex flex-col relative z-20">
+        
+        {/* Top Image block with floating info */}
+        <div className="relative h-44 overflow-hidden rounded-2xl mb-6 border border-slate-100 shrink-0">
+          <img 
+            src={service.image} 
+            alt={service.title}
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+          
+          {/* Floating glass category badge */}
+          <span className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md border border-white/10 text-[8.5px] font-mono tracking-widest font-bold text-white px-2.5 py-1 rounded-lg z-20 shadow-sm">
+            {getServiceBadge(service.id)}
+          </span>
 
-      <div style={{ transform: 'translateZ(24px)' }} className="transition-transform duration-300 relative z-20">
-        {/* Icon Circle */}
-        <div className="w-12 h-12 rounded-2xl bg-blue-50 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
-          {renderIcon(service.iconName)}
+          {/* Overlapping floating icon container */}
+          <div className="absolute bottom-0 right-3 translate-y-1/2 w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 text-primary flex items-center justify-center shadow-lg z-20 transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
+            {renderIcon(service.iconName)}
+          </div>
         </div>
 
-        {/* Info */}
-        <h3 className="font-display font-bold text-lg text-slate-900 mt-6 group-hover:text-primary transition-colors">
-          {service.title}
-        </h3>
-        
-        <p className="text-sm text-slate-500 mt-3 line-clamp-3 leading-relaxed">
-          {service.description}
-        </p>
+        {/* Content Body */}
+        <div className="flex-grow flex flex-col justify-between">
+          <div>
+            <h3 className="font-display font-extrabold text-base sm:text-lg text-slate-900 group-hover:text-primary transition-colors leading-snug">
+              {service.title}
+            </h3>
+            
+            <p className="text-xs sm:text-sm text-slate-500 mt-2.5 line-clamp-3 leading-relaxed">
+              {service.description}
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Card Footer Link */}
       <div 
-        style={{ transform: 'translateZ(12px)' }}
-        className="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between text-xs font-semibold text-primary transition-transform duration-300 relative z-20"
+        style={{ transform: 'translateZ(10px)' }}
+        className="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between text-xs font-bold text-primary transition-transform duration-300 relative z-20"
       >
-        <span>Ver cronograma</span>
+        <span className="group-hover:text-primary transition-colors">Visualizar Cronograma</span>
         <div className="w-6 h-6 rounded-full bg-blue-50 group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-all duration-300">
           <ArrowRight className="w-3.5 h-3.5" />
         </div>
@@ -114,10 +149,11 @@ function ServiceCard({ service, onClick, renderIcon }: ServiceCardProps) {
 
 export default function Services() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const swiperRef = useRef<SwiperType | null>(null);
 
-  // Icon dynamic renderer helper
+  // Icon dynamic renderer helper with refined sizes
   const renderIcon = (iconName: string) => {
-    const props = { className: 'w-6 h-6' };
+    const props = { className: 'w-4.5 h-4.5' };
     switch (iconName) {
       case 'Sparkles': return <Sparkles {...props} />;
       case 'Droplet': return <Droplet {...props} />;
@@ -132,34 +168,105 @@ export default function Services() {
   };
 
   return (
-    <section id="servicos" className="py-20 sm:py-28 bg-bg-soft relative">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="servicos" className="py-24 sm:py-32 bg-slate-50 relative overflow-hidden">
+      {/* Blueprint grid background */}
+      <div 
+        className="absolute inset-0 opacity-[0.025] pointer-events-none" 
+        style={{ 
+          backgroundImage: `
+            radial-gradient(#0077FF 1.5px, transparent 1.5px),
+            linear-gradient(to right, rgba(0,119,255,0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,119,255,0.15) 1px, transparent 1px)
+          `, 
+          backgroundSize: '32px 32px, 160px 160px, 160px 160px' 
+        }} 
+      />
+
+      {/* Decorative Blur Background Bubbles */}
+      <div className="absolute top-1/4 -right-40 w-[400px] h-[400px] bg-blue-100/20 rounded-full filter blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-40 w-[450px] h-[450px] bg-cyan-100/25 rounded-full filter blur-3xl pointer-events-none" />
+
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 gsap-reveal">
-          <span className="text-xs font-bold tracking-widest text-primary uppercase font-mono">
+          <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase font-mono px-3.5 py-1.5 bg-blue-50 border border-blue-100 rounded-full">
             Nossos Serviços
           </span>
-          <h2 className="font-display font-bold text-3xl sm:text-4.5xl text-slate-900 tracking-tight mt-2">
-            Tratamentos e Soluções Sob Medida <br className="hidden sm:inline" />
-            Para Cada Tipo de Piscina
+          <h2 className="font-display font-extrabold text-3xl sm:text-4.5xl text-slate-900 tracking-tight mt-6 leading-none">
+            Tratamentos e Soluções Sob Medida
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-4 mx-auto" />
-          <p className="text-slate-500 text-sm sm:text-base mt-4 max-w-2xl mx-auto">
-            Da aspiração pontual à automação completa da casa de máquinas. Cuidamos de todos os aspectos técnicos para você focar apenas em aproveitar seu lazer.
+          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-5 mx-auto" />
+          <p className="text-slate-500 text-sm sm:text-base mt-5 leading-relaxed">
+            Unimos o melhor da engenharia estrutural com as tecnologias de impermeabilização e revitalização mais modernas do mercado para entregar estanqueidade real e duradoura.
           </p>
         </div>
 
-        {/* Animated Service Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 gsap-stagger-container">
-          {servicesData.map((service, idx) => (
-            <ServiceCard 
-              key={service.id}
-              service={service}
-              onClick={() => setSelectedService(service)}
-              renderIcon={renderIcon}
-            />
-          ))}
+        {/* Animated Service Cards Slider */}
+        <div className="relative group/swiper mt-8 sm:mt-12">
+          {/* Custom Navigation Buttons */}
+          <div className="absolute top-1/2 -left-4 sm:-left-6 -translate-y-1/2 z-30 transition-all duration-300 opacity-0 group-hover/swiper:opacity-100 pointer-events-none hidden md:flex">
+            <button
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="pointer-events-auto w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border border-slate-200/80 shadow-lg text-slate-600 hover:text-primary hover:border-primary/50 flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
+              aria-label="Anterior"
+            >
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+          </div>
+          
+          <div className="absolute top-1/2 -right-4 sm:-right-6 -translate-y-1/2 z-30 transition-all duration-300 opacity-0 group-hover/swiper:opacity-100 pointer-events-none hidden md:flex">
+            <button
+              onClick={() => swiperRef.current?.slideNext()}
+              className="pointer-events-auto w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border border-slate-200/80 shadow-lg text-slate-600 hover:text-primary hover:border-primary/50 flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
+              aria-label="Próximo"
+            >
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+          </div>
+
+          <Swiper
+            onBeforeInit={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 28,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 32,
+              },
+            }}
+            className="pb-14 !px-4 -mx-4"
+          >
+            {servicesData.map((service) => (
+              <SwiperSlide key={service.id} className="h-auto py-4">
+                <ServiceCard 
+                  service={service}
+                  onClick={() => setSelectedService(service)}
+                  renderIcon={renderIcon}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
       </div>

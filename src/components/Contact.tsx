@@ -125,40 +125,44 @@ export default function Contact() {
   };
 
   return (
-    <section id="contato" className="py-20 sm:py-28 bg-bg-soft relative overflow-hidden">
+    <section id="contato" className="py-24 sm:py-32 bg-slate-50 relative overflow-hidden">
       {/* Wave bottom separator */}
       <div className="absolute top-0 left-0 right-0 h-16 overflow-hidden select-none pointer-events-none bg-white">
-        <svg className="absolute bottom-0 w-full h-10 text-bg-soft" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <svg className="absolute bottom-0 w-full h-10 text-slate-50" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <path d="M0,0 C150,90 350,10 500,60 C650,110 850,20 1000,70 C1150,120 1250,50 1300,30 L1300,120 L0,120 Z" fill="currentColor"></path>
         </svg>
       </div>
 
       {/* Blueprint grid background */}
       <div 
-        className="absolute inset-0 opacity-[0.035] pointer-events-none" 
+        className="absolute inset-0 opacity-[0.025] pointer-events-none" 
         style={{ 
           backgroundImage: `
             radial-gradient(#0077FF 1.5px, transparent 1.5px),
             linear-gradient(to right, rgba(0,119,255,0.15) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(0,119,255,0.15) 1px, transparent 1px)
           `, 
-          backgroundSize: '24px 24px, 120px 120px, 120px 120px' 
+          backgroundSize: '32px 32px, 160px 160px, 160px 160px' 
         }} 
       />
+
+      {/* Decorative ambient bubbles */}
+      <div className="absolute top-1/3 -left-40 w-[450px] h-[450px] bg-blue-100/20 rounded-full filter blur-3xl pointer-events-none animate-pulse-slow" />
+      <div className="absolute bottom-1/3 -right-40 w-[450px] h-[450px] bg-cyan-100/20 rounded-full filter blur-3xl pointer-events-none animate-pulse-slow" />
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 gsap-reveal">
-          <span className="text-xs font-bold tracking-widest text-primary uppercase font-mono flex items-center justify-center gap-1.5">
+        <div className="text-center max-w-3xl mx-auto mb-20 sm:mb-24 gsap-reveal">
+          <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase font-mono px-3.5 py-1.5 bg-blue-50 border border-blue-100 rounded-full inline-flex items-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5" />
             Central de Engenharia
           </span>
-          <h2 className="font-display font-bold text-3xl sm:text-4.5xl text-slate-900 tracking-tight mt-2">
+          <h2 className="font-display font-extrabold text-3xl sm:text-4.5xl text-slate-900 tracking-tight mt-6 leading-none">
             Agende uma Avaliação Técnica de Engenharia
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-4 mx-auto" />
-          <p className="text-slate-500 text-sm sm:text-base mt-4">
+          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-5 mx-auto" />
+          <p className="text-slate-500 text-sm sm:text-base mt-5 leading-relaxed">
             Preencha o formulário e nosso time de engenharia retornará via WhatsApp para agendar uma vistoria técnica e emitir o orçamento detalhado de sua piscina.
           </p>
         </div>

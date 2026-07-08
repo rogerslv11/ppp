@@ -25,10 +25,23 @@ body {
 
 /* Glassmorphism utility classes */
 .glass-header {
-  background-color: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 119, 255, 0.08),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.85);
+}
+
+.glass-header-top {
+  background-color: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 4px 20px -10px rgba(0, 0, 0, 0.05),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
 }
 
 .glass-card {
@@ -76,4 +89,21 @@ body {
 .animate-pulse-slow {
   animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+/* Swiper Custom Pagination styles */
+.swiper-pagination-bullet {
+  background-color: #BACEDB !important;
+  opacity: 0.6 !important;
+  width: 8px !important;
+  height: 8px !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #0077FF !important;
+  opacity: 1 !important;
+  width: 24px !important;
+  border-radius: 999px !important;
+}
+
 
