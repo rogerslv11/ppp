@@ -156,52 +156,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
         </div>
       </div>
 
-      {/* Glass Statistics Overlay (Sticky layout element at bottom) */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 sm:mt-12">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0, y: 35 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                delayChildren: 0.6,
-                staggerChildren: 0.1,
-                duration: 0.95,
-                ease: [0.16, 1, 0.3, 1]
-              }
-            }
-          }}
-          className="bg-slate-950/65 backdrop-blur-xl border border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 p-6 sm:p-8 rounded-3.5xl shadow-2xl shadow-black/40"
-        >
-          {stats.map((stat, idx) => (
-            <motion.div 
-              key={idx} 
-              variants={{
-                hidden: { opacity: 0, y: 20, scale: 0.96 },
-                visible: { 
-                  opacity: 1, 
-                  y: 0, 
-                  scale: 1, 
-                  transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] } 
-                }
-              }}
-              className={`flex flex-col items-center justify-center text-center p-2 transition-all duration-300 hover:scale-105 ${
-                idx !== stats.length - 1 ? 'border-r-0 border-b border-white/5 pb-6 md:pb-2 md:border-b-0 md:border-r md:border-white/10' : ''
-              }`}
-            >
-              <span className="font-display font-black text-2xl sm:text-3.5xl lg:text-4.5xl text-white tracking-tight">
-                {stat.value}
-              </span>
-              <span className="mt-2 text-xs font-semibold text-slate-300/90 tracking-wide leading-normal">
-                {stat.label}
-              </span>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+
     </section>
   );
 }
