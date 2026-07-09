@@ -20,7 +20,7 @@ export const servicesData: Service[] = [
   {
     id: 3,
     title: 'Impermeabilização com Fibra',
-    description: 'Liner contínuo de fibra de vidro de alta durabilidade para estanqueidade definitiva.',
+    description: 'Liner contínuo de fibra de vidro de alta durabilidade para impermeabilização definitiva.',
     detail: 'O método mais eficaz e duradouro do mercado para eliminar infiltrações. Aplicamos uma barreira física contínua de resina estrutural e fibra de vidro (laminação técnica) sobre piscinas de alvenaria, concreto ou reservatórios, criando uma superfície 100% impermeável e fácil de limpar.',
     iconName: 'Trash2',
     image: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80'
@@ -45,7 +45,7 @@ export const servicesData: Service[] = [
     id: 6,
     title: 'Reformas de Reservatórios',
     description: 'Manutenção, impermeabilização e adequação técnica de grandes reservatórios e cisternas.',
-    detail: 'Serviço especializado para condomínios, indústrias e residências. Reformamos e impermeabilizamos reservatórios elevados e subterrâneos de água potável utilizando produtos atóxicos homologados pela ANVISA, garantindo estanqueidade total e potabilidade da água armazenada.',
+    detail: 'Serviço especializado para condomínios, indústrias e residências. Reformamos e impermeabilizamos reservatórios elevados e subterrâneos de água potável utilizando produtos atóxicos homologados pela ANVISA, garantindo impermeabilização total e potabilidade da água armazenada.',
     iconName: 'ShieldCheck',
     image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80'
   },
@@ -105,8 +105,8 @@ export const differentiatorsData: Differentiator[] = [
   },
   {
     id: 4,
-    title: 'Garantia de Estanqueidade Real',
-    description: 'Oferecemos garantia contratual de estanqueidade de longa duração para reformas estruturais e impermeabilizações com fibra.',
+    title: 'Garantia de Impermeabilização Real',
+    description: 'Oferecemos garantia contratual de impermeabilização de longa duração para reformas estruturais e impermeabilizações com fibra.',
     iconName: 'CheckCircle'
   },
   {
@@ -212,7 +212,7 @@ export const faqsData: FAQItem[] = [
   {
     id: 2,
     question: 'Como é feito o diagnóstico de vazamentos estruturais?',
-    answer: 'Utilizamos testes de estanqueidade pneumática nas tubulações e ensaios técnicos estruturais para identificar com precisão se o vazamento está na rede hidráulica (retorno, ralo de fundo, skimmer) ou na estrutura física (fissuras ou porosidade do concreto).'
+    answer: 'Utilizamos testes de impermeabilização pneumática nas tubulações e ensaios técnicos estruturais para identificar com precisão se o vazamento está na rede hidráulica (retorno, ralo de fundo, skimmer) ou na estrutura física (fissuras ou porosidade do concreto).'
   },
   {
     id: 3,

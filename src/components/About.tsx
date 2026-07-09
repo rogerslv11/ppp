@@ -190,7 +190,7 @@ export default function About() {
   const tabContent = {
     missao: {
       title: 'Nossa Missão',
-      text: 'Garantir a integridade estrutural, estanqueidade e valorização estética das piscinas e reservatórios de nossos clientes através de engenharia civil de elite, revestimentos de alto padrão e impermeabilização definitiva com fibra.',
+      text: 'Garantir a integridade estrutural, impermeabilização e valorização estética das piscinas e reservatórios de nossos clientes através de engenharia civil de elite, revestimentos de alto padrão e impermeabilização definitiva com fibra.',
       icon: <Target className="w-6 h-6 text-primary" />,
       color: 'bg-blue-500/10 text-primary border-primary/20'
     },
@@ -211,7 +211,7 @@ export default function About() {
   const highlights = [
     'Mais de 20 anos de experiência sólida na construção civil.',
     '5 anos de especialização técnica em fibra, alvenaria e concreto.',
-    'Laudo de estanqueidade e garantia estrutural em contrato.',
+    'Laudo de impermeabilização e garantia estrutural em contrato.',
     'Equipe própria qualificada, uniformizada e segurada (sem freelancers).'
   ];
 

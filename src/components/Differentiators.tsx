@@ -101,7 +101,7 @@ export default function Differentiators() {
         </div>
 
         {/* Dynamic Highlight Banner under differentials: Bento Box Design */}
-        <div className="gsap-reveal-scale mt-20 sm:mt-24 rounded-3.5xl bg-gradient-to-br from-slate-900 via-blue-950 to-primary text-white overflow-hidden shadow-2xl shadow-blue-950/20 border border-slate-800">
+        <div className="hidden gsap-reveal-scale mt-20 sm:mt-24 rounded-3.5xl bg-gradient-to-br from-slate-900 via-blue-950 to-primary text-white overflow-hidden shadow-2xl shadow-blue-950/20 border border-slate-800">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 sm:p-12 items-center">
             
             {/* Banner Left Info Block */}
@@ -160,7 +160,7 @@ export default function Differentiators() {
                   <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
                     <span className="text-[7.5px] font-mono text-slate-400 uppercase tracking-wider block">IDENTIFICAÇÃO DO PROJETO</span>
                     <span className="text-[10px] font-bold text-slate-800 block mt-0.5">Residencial Green Valley - Bloco C</span>
-                    <span className="text-[8px] text-slate-500 block leading-none mt-0.5">Vistoria de Estanqueidade e Patologias</span>
+                    <span className="text-[8px] text-slate-500 block leading-none mt-0.5">Vistoria de Impermeabilização e Patologias</span>
                   </div>
 
                   <div className="space-y-1.5">
@@ -168,7 +168,7 @@ export default function Differentiators() {
                     
                     {[
                       { item: 'Teste de Esclerometria (Concreto)', ok: true },
-                      { item: 'Ensaio de Estanqueidade Hidráulica', ok: true },
+                      { item: 'Ensaio de Impermeabilização Hidráulica', ok: true },
                       { item: 'Mapeamento de Fissuras Ativas', ok: true },
                       { item: 'Nível de Cloretos & pH da Água', ok: true }
                     ].map((row, i) => (

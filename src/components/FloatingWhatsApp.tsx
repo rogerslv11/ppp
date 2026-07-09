@@ -72,7 +72,7 @@ export default function FloatingWhatsApp() {
             {/* Ingress to WhatsApp Action Button */}
             <div className="p-3 bg-white border-t border-slate-50">
               <a
-                href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Gostaria+de+falar+com+o+qu%C3%ADmico+respons%C3%A1vel+sobre+manuten%C3%A7%C3%A3o+de+piscina."
+                href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Gostaria+de+falar+com+o+especialista+respons%C3%A1vel+sobre+manuten%C3%A7%C3%A3o+de+piscina."
                 target="_blank"
                 referrerPolicy="no-referrer"
                 onClick={() => setIsOpen(false)}
@@ -99,7 +99,7 @@ export default function FloatingWhatsApp() {
               className="absolute right-18 bg-white border border-slate-100 text-slate-800 font-semibold text-xs px-4 py-2.5 rounded-2xl shadow-xl whitespace-nowrap flex items-center gap-2 mr-1"
             >
               <Droplets className="w-4 h-4 text-primary animate-bounce" />
-              <span>Dúvidas? Fale com o químico</span>
+              <span>Dúvidas? Fale com o especialista</span>
               <button 
                 onClick={(e) => {
                   e.stopPropagation();

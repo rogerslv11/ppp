@@ -135,12 +135,15 @@ function ServiceCard({ service, onClick, renderIcon }: ServiceCardProps) {
 
       {/* Card Footer Link */}
       <div 
-        style={{ transform: 'translateZ(10px)' }}
-        className="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between text-xs font-bold text-primary transition-transform duration-300 relative z-20"
+        style={{ transform: 'translateZ(15px)' }}
+        className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between relative z-20"
       >
-        <span className="group-hover:text-primary transition-colors">Visualizar Cronograma</span>
-        <div className="w-6 h-6 rounded-full bg-blue-50 group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-all duration-300">
-          <ArrowRight className="w-3.5 h-3.5" />
+        <span className="text-xs font-semibold text-slate-400 group-hover:text-slate-600 transition-colors">
+          Plano Técnico
+        </span>
+        <div className="flex items-center gap-2 px-4.5 py-2 rounded-xl bg-gradient-to-r from-primary/10 to-blue-500/10 group-hover:from-primary group-hover:to-blue-600 border border-primary/20 group-hover:border-primary text-primary group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md group-hover:shadow-primary/25 font-bold text-xs">
+          <span>Ver mais</span>
+          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
         </div>
       </div>
     </div>
@@ -198,7 +201,7 @@ export default function Services() {
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-5 mx-auto" />
           <p className="text-slate-500 text-sm sm:text-base mt-5 leading-relaxed">
-            Unimos o melhor da engenharia estrutural com as tecnologias de impermeabilização e revitalização mais modernas do mercado para entregar estanqueidade real e duradoura.
+            Unimos o melhor da engenharia estrutural com as tecnologias de impermeabilização e revitalização mais modernas do mercado para entregar impermeabilização real e duradoura.
           </p>
         </div>
 

@@ -18,27 +18,8 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 import BackToTopButton from './components/BackToTopButton';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'simulador'>('home');
-
   // Universal smooth scroll handler that works for elements and coordinates
   const scrollToSection = (id: string) => {
-    if (currentPage !== 'home') {
-      setCurrentPage('home');
-      setTimeout(() => {
-        const targetElement = document.getElementById(id);
-        if (targetElement) {
-          const headerOffset = 80;
-          const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-          const offsetPosition = elementPosition - headerOffset;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }, 150);
-      return;
-    }
-
     const targetElement = document.getElementById(id);
     if (targetElement) {
       // Offset calculation for sticky header spacing on scrolling
@@ -54,12 +35,7 @@ export default function App() {
   };
 
   const handleCtaClick = (id: string) => {
-    if (id === 'simulador') {
-      setCurrentPage('simulador');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      scrollToSection(id);
-    }
+    scrollToSection(id);
   };
 
   return (
@@ -77,59 +53,39 @@ export default function App() {
       {/* Header Sticky Navigation (includes scroll reading progress bar) */}
       <Header 
         onNavClick={scrollToSection} 
-        currentPage={currentPage}
-        onPageChange={(page) => {
-          setCurrentPage(page);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
       />
 
       {/* Main Single Page Layout Sections */}
       <main className="flex-grow">
-        {currentPage === 'home' ? (
-          <>
-            {/* Hero Section */}
-            <Hero onCtaClick={handleCtaClick} />
+        {/* Hero Section */}
+        <Hero onCtaClick={handleCtaClick} />
 
-            {/* Dynamic Services Grid (with interactive detail overlays) */}
-            <Services />
+        {/* Dynamic Services Grid (with interactive detail overlays) */}
+        <Services />
 
-            {/* Seamless horizontal customer reviews infinite scroll */}
-            <TestimonialMarquee />
+        {/* Seamless horizontal customer reviews infinite scroll */}
+        <TestimonialMarquee />
 
-            {/* Structural Horizontal Timeline workflow */}
-            <HowWeWork />
+        {/* Structural Horizontal Timeline workflow */}
+        <HowWeWork />
 
-            {/* Company Overview Section */}
-            <About />
+        {/* Company Overview Section */}
+        <About />
 
-            {/* Standardized Glassmorphism Differentiators */}
-            <Differentiators />
+        {/* Standardized Glassmorphism Differentiators */}
+        <Differentiators />
 
-            {/* Before/After sliding comparisons and Masonry Photo portfolio */}
-            <Gallery />
+        {/* Interactive Pool Volume & Chemical Treatment Estimator */}
+        <PoolEstimator />
 
-            {/* Interactive FAQ Accordeon */}
-            <FAQ />
+        {/* Before/After sliding comparisons and Masonry Photo portfolio */}
+        <Gallery />
 
-            {/* Contact form with validations + embedded dynamic maps */}
-            <Contact />
-          </>
-        ) : (
-          <div className="pt-24 sm:pt-28">
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
-            >
-              {/* Interactive Pool Volume & Chemical Treatment Estimator */}
-              <PoolEstimator />
+        {/* Interactive FAQ Accordeon */}
+        <FAQ />
 
-              {/* Dynamic contact and map to finalize quotes */}
-              <Contact />
-            </motion.div>
-          </div>
-        )}
+        {/* Contact form with validations + embedded dynamic maps */}
+        <Contact />
       </main>
 
       {/* Structured Footer map */}

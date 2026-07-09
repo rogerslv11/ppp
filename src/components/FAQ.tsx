@@ -50,7 +50,7 @@ const enrichedFaqs: RichFAQItem[] = [
     id: 7,
     question: 'Quais normas técnicas a Renova adota em seus projetos de engenharia?',
     category: 'impermeabilizacao',
-    answer: 'Nossas obras e projetos seguem estritamente as diretrizes da ABNT NBR 10339 (Projeto e execução de piscinas), NBR 15575 (Desempenho de Edificações), NBR 9575 (Impermeabilização - Seleção e Projeto) e NBR 9574 (Execução de impermeabilização), assegurando alta estanqueidade e resistência estrutural.'
+    answer: 'Nossas obras e projetos seguem estritamente as diretrizes da ABNT NBR 10339 (Projeto e execução de piscinas), NBR 15575 (Desempenho de Edificações), NBR 9575 (Impermeabilização - Seleção e Projeto) e NBR 9574 (Execução de impermeabilização), assegurando alta impermeabilização e resistência estrutural.'
   }
 ];
 
@@ -106,7 +106,7 @@ export default function FAQ() {
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-5 mx-auto" />
           <p className="text-slate-500 text-sm sm:text-base mt-5 leading-relaxed">
-            Consulte as respostas técnicas elaboradas pela nossa equipe de engenharia sobre prazos, normas ABNT, estanqueidade em fibra e laudos com emissão de ART.
+            Consulte as respostas técnicas elaboradas pela nossa equipe de engenharia sobre prazos, normas ABNT, impermeabilização em fibra e laudos com emissão de ART.
           </p>
         </div>
 
@@ -233,7 +233,7 @@ export default function FAQ() {
                               <span className="text-[10px] font-mono uppercase tracking-wider font-bold bg-slate-50 border border-slate-100 text-slate-400 px-2.5 py-1 rounded-md">
                                 Categoria: {
                                   faq.category === 'reformas' ? 'Reformas & Obras' : 
-                                  faq.category === 'impermeabilizacao' ? 'Impermeabilização & Estanqueidade' : 
+                                  faq.category === 'impermeabilizacao' ? 'Impermeabilização Completa' : 
                                   'Vazamentos & Laudos'
                                 }
                               </span>
@@ -277,7 +277,7 @@ export default function FAQ() {
           <div className="text-left max-w-md relative z-10">
             <h4 className="font-display font-extrabold text-slate-900 text-base sm:text-lg">Possui um vazamento grave ou precisa de laudo com ART?</h4>
             <p className="text-xs sm:text-sm text-slate-500 mt-2.5 leading-relaxed">
-              Fale diretamente com nosso diretor técnico Marcos Oliveira, engenheiro civil perito em patologia estrutural e estanqueidade de piscinas.
+              Fale diretamente com nosso diretor técnico Marcos Oliveira, engenheiro civil perito em patologia estrutural e impermeabilização de piscinas.
             </p>
           </div>
           <a

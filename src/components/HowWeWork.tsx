@@ -17,7 +17,7 @@ export default function HowWeWork() {
       title: 'Visita Técnica Gratuita',
       focus: 'Diagnóstico de Engenharia',
       duration: 'Agendamento Flexível',
-      description: 'Nossa equipe qualificada inspeciona patologias do concreto, fissuras estruturais e faz testes de estanqueidade hidráulica.',
+      description: 'Nossa equipe qualificada inspeciona patologias do concreto, fissuras estruturais e faz testes de impermeabilização hidráulica.',
       icon: <Search className="w-5 h-5" />,
       color: 'from-cyan-500 to-blue-600 shadow-cyan-500/10 text-cyan-600 bg-cyan-50/50 border-cyan-100'
     },
@@ -32,7 +32,7 @@ export default function HowWeWork() {
     },
     {
       number: '04',
-      title: 'Estanqueidade & Garantia',
+      title: 'Impermeabilização & Garantia',
       focus: 'Segurança Contratual',
       duration: 'Garantia de Longo Prazo',
       description: 'Enchimento assistido, 72h de teste estático monitorado, laudo técnico com emissão de ART e termo contratual de garantia.',
@@ -68,7 +68,7 @@ export default function HowWeWork() {
             Fluxo de Trabalho
           </span>
           <h2 className="font-display font-extrabold text-3xl sm:text-4.5xl text-slate-900 tracking-tight mt-6 leading-none">
-            Do Primeiro Contato à Entrega Estanque
+            Do Primeiro Contato à Entrega Impermeabilizada
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-5 mx-auto" />
           <p className="text-slate-500 text-sm sm:text-base mt-5 leading-relaxed">

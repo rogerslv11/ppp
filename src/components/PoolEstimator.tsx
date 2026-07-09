@@ -63,7 +63,7 @@ export default function PoolEstimator() {
     {
       id: 'impermeabilizacao',
       title: 'Impermeabilização com Fibra',
-      description: 'Liner contínuo de fibra de vidro de alta resistência. Estanqueidade definitiva.',
+      description: 'Liner contínuo de fibra de vidro de alta resistência. Impermeabilização definitiva.',
       baseCostMin: 160,
       baseCostMax: 230,
       isPerSqM: true
@@ -262,7 +262,7 @@ ${selectedServices.includes('deck') ? `• Área do Deck Desejado: ${deckSize} m
 • Prazo Estimado de Execução: ${timeline}
 • Estimativa de Custo (Preparo + Obra): R$ ${estimatedCostMin.toLocaleString('pt-BR')} a R$ ${estimatedCostMax.toLocaleString('pt-BR')}
 
-Por favor, gostaria de agendar uma visita técnica de engenharia em Porto Alegre para confirmar a estanqueidade e validar o orçamento definitivo.`;
+Por favor, gostaria de agendar uma visita técnica de engenharia em Porto Alegre para confirmar a impermeabilização e validar o orçamento definitivo.`;
 
     const encodedText = encodeURIComponent(msg);
     window.open(`https://wa.me/5551999999999?text=${encodedText}`, '_blank', 'noopener,noreferrer');
@@ -637,7 +637,7 @@ Por favor, gostaria de agendar uma visita técnica de engenharia em Porto Alegre
                       </div>
                       <div className="flex gap-2 items-center">
                         <CheckCircle className="w-4 h-4 text-accent shrink-0" />
-                        <span>Teste de Estanqueidade de 72 Horas Pós-Obra</span>
+                        <span>Teste de Impermeabilização de 72 Horas Pós-Obra</span>
                       </div>
                       <div className="flex gap-2 items-center">
                         <CheckCircle className="w-4 h-4 text-accent shrink-0" />
@@ -668,7 +668,7 @@ Por favor, gostaria de agendar uma visita técnica de engenharia em Porto Alegre
             <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-lg shadow-slate-100/50 flex gap-3 text-xs text-slate-600 leading-relaxed">
               <Sparkle className="w-5 h-5 text-accent shrink-0 mt-0.5 animate-pulse" />
               <div>
-                <p className="font-bold text-slate-800">Garantia Real de Estanqueidade</p>
+                <p className="font-bold text-slate-800">Garantia Real de Impermeabilização</p>
                 <p className="mt-0.5 text-slate-500">
                   Nossas soluções de laminação com fibra de vidro premium criam um copo monolítico (liner vedado continuo) impermeável, isento de porosidade ou trincas hidráulicas, eliminando permanentemente qualquer perda de água.
                 </p>

@@ -19,7 +19,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
   const stats: StatItem[] = [
     { value: '20+', label: 'Anos na Construção', suffix: '' },
     { value: '500+', label: 'Obras Entregues', suffix: '' },
-    { value: '100%', label: 'Estanqueidade Garantida', suffix: '' },
+    { value: '100%', label: 'Impermeabilização Garantida', suffix: '' },
     { value: 'CREA-RS', label: 'Responsabilidade Técnica (ART)', suffix: '' },
   ];
 
@@ -91,7 +91,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
           >
             Sua Piscina Sempre <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-blue-200 to-white font-black pb-1 inline-block">
-              Segura, Estanque & Linda
+              Segura, Impermeabilizada & Linda
             </span> <br />
             Com Resguardo de Engenharia.
           </motion.h1>
@@ -144,7 +144,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
               <div className="w-6 h-6 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
                 <Award className="w-3.5 h-3.5 text-accent" />
               </div>
-              <span>Laudo de Estanqueidade com ART</span>
+              <span>Laudo de Impermeabilização com ART</span>
             </div>
             <div className="flex items-center gap-2 hover:text-white transition-colors duration-300 cursor-default">
               <div className="w-6 h-6 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">

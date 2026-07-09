@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Droplet, 
-  Sparkles, 
   Phone, 
   Mail, 
   MapPin, 
@@ -15,6 +13,7 @@ import {
   Flame,
   Gauge
 } from 'lucide-react';
+import Logo from './Logo';
 
 interface FooterProps {
   onNavClick: (id: string) => void;
@@ -29,7 +28,7 @@ export default function Footer({ onNavClick }: FooterProps) {
     { label: 'Início', id: 'home' },
     { label: 'Sobre Nós', id: 'sobre' },
     { label: 'Serviços de Elite', id: 'servicos' },
-    { label: 'Simulador de Volume', id: 'simulador' },
+    { label: 'Diferenciais', id: 'diferenciais' },
     { label: 'Como Trabalhamos', id: 'como-trabalhamos' },
     { label: 'Antes e Depois', id: 'antes-depois' },
     { label: 'Depoimentos', id: 'depoimentos' },
@@ -80,23 +79,12 @@ export default function Footer({ onNavClick }: FooterProps) {
           <div className="lg:col-span-5 space-y-3">
             <div 
               onClick={() => handleNavClickInternal('home')}
-              className="flex items-center gap-2 cursor-pointer group w-fit"
+              className="cursor-pointer group w-fit"
             >
-              <div className="relative flex items-center justify-center w-10.5 h-10.5 rounded-xl bg-gradient-to-tr from-primary to-accent text-white shadow-lg shadow-primary/20">
-                <Droplet className="w-5.5 h-5.5 animate-pulse" />
-                <Sparkles className="w-3 h-3 absolute top-1 right-1" />
-              </div>
-              <div>
-                <span className="font-display font-bold text-xl tracking-tight text-white flex items-center">
-                  Renova
-                </span>
-                <p className="text-[9px] font-mono tracking-widest text-slate-500 uppercase leading-none -mt-0.5">
-                  Engenharia & Impermeabilização
-                </p>
-              </div>
+              <Logo size="md" dark={true} />
             </div>
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md">
-              A excelência técnica que sua piscina residencial ou de condomínio merece. Desenvolvemos soluções inteligentes com foco em estanqueidade, reformas e laudos de engenharia.
+              A excelência técnica que sua piscina residencial ou de condomínio merece. Desenvolvemos soluções inteligentes com foco em impermeabilização, reformas e laudos de engenharia.
             </p>
           </div>
 
@@ -106,7 +94,7 @@ export default function Footer({ onNavClick }: FooterProps) {
               <span className="text-[9px] font-mono font-bold tracking-widest text-accent uppercase block">Informativo Mensal</span>
               <h4 className="font-display font-bold text-white text-base">Receba Dicas de Valorização & Reformas</h4>
               <p className="text-slate-400 text-xs leading-normal">
-                Conteúdos elaborados por engenheiros experientes sobre conservação e estanqueidade de piscinas.
+                Conteúdos elaborados por engenheiros experientes sobre conservação e impermeabilização de piscinas.
               </p>
             </div>
 

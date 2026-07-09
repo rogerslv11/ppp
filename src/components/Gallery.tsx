@@ -26,8 +26,8 @@ interface RecoveryTechnicalSpec {
   tratamento: string;
   produtos: string;
   responsavel: string;
-  parametrosAntes: { estanqueidade: string; infiltracao: string; acabamento: string; perda: string };
-  parametrosDepois: { estanqueidade: string; infiltracao: string; acabamento: string; perda: string };
+  parametrosAntes: { impermeabilizacao: string; infiltracao: string; acabamento: string; perda: string };
+  parametrosDepois: { impermeabilizacao: string; infiltracao: string; acabamento: string; perda: string };
 }
 
 const technicalSpecs: Record<number, RecoveryTechnicalSpec> = {
@@ -38,8 +38,8 @@ const technicalSpecs: Record<number, RecoveryTechnicalSpec> = {
     tratamento: 'Injeção estrutural de poliuretano expandido hidroativo para selagem de trincas profundas, seguida de revestimento contínuo em fibra de vidro com resina isoftálica. Acabamento gel-coat isoftálico azul celeste com barreira de barreira química.',
     produtos: 'Poliuretano expandido, Resina Isoftálica, Manta de Fibra de Vidro (300g/m²), Pintura Gel-coat Especial e Catalisador Butanox.',
     responsavel: 'Marcos Oliveira (CREA-RS: 507.123)',
-    parametrosAntes: { estanqueidade: 'Comprometida (Vazamentos)', infiltracao: 'Solo encharcado sob a base', acabamento: 'Reboque craquelado e infiltração', perda: '3.200L / dia (Crítico)' },
-    parametrosDepois: { estanqueidade: '100% Estanque (Monolítico)', infiltracao: 'Solo seco e estável', acabamento: 'Liner em Fibra liso e brilhante', perda: '0 Litros (Perda Zero)' }
+    parametrosAntes: { impermeabilizacao: 'Comprometida (Vazamentos)', infiltracao: 'Solo encharcado sob a base', acabamento: 'Reboque craquelado e infiltração', perda: '3.200L / dia (Crítico)' },
+    parametrosDepois: { impermeabilizacao: '100% Impermeabilizada (Monolítica)', infiltracao: 'Solo seco e estável', acabamento: 'Liner em Fibra liso e brilhante', perda: '0 Litros (Perda Zero)' }
   },
   2: {
     volume: '32.000 Litros',
@@ -48,8 +48,8 @@ const technicalSpecs: Record<number, RecoveryTechnicalSpec> = {
     tratamento: 'Fresagem mecânica e raspagem das bolhas de osmose, lixamento completo de limpeza, laminação de reforço de fibra de vidro nas regiões enfraquecidas, pintura geral com gel-coat náutico premium de alto brilho e polimento selante de acabamento.',
     produtos: 'Massa de barreira química contra osmose, Gel-coat Azul Real Náutico, Manta de Fibra e Cera Selante Especial.',
     responsavel: 'Marcos Oliveira (CREA-RS: 507.123)',
-    parametrosAntes: { estanqueidade: 'Frágil (Bolhas e Osmose)', infiltracao: 'Risco de vazamento em flanges', acabamento: 'Fibra fosca e descascando', perda: 'Infiltrações em tubos' },
-    parametrosDepois: { estanqueidade: 'Reforço de Fibra Ativo', infiltracao: 'Flanges vedados e novos flanges', acabamento: 'Polimento espelhado premium', perda: 'Tubulação 100% estanque' }
+    parametrosAntes: { impermeabilizacao: 'Frágil (Bolhas e Osmose)', infiltracao: 'Risco de vazamento em flanges', acabamento: 'Fibra fosca e descascando', perda: 'Infiltrações em tubos' },
+    parametrosDepois: { impermeabilizacao: 'Reforço de Fibra Ativo', infiltracao: 'Flanges vedados e novos flanges', acabamento: 'Polimento espelhado premium', perda: 'Tubulação 100% impermeabilizada' }
   }
 };
 
@@ -266,7 +266,7 @@ export default function Gallery() {
                   {/* AFTER BADGE */}
                   <div className="absolute right-4 bottom-4 z-20 px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md text-emerald-400 font-mono text-[10px] uppercase font-bold tracking-wider border border-white/5 flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    Depois (Concluído & Estanque)
+                    Depois (Concluído & Impermeabilizada)
                   </div>
 
                   {/* BEFORE STATE IMAGE (Clip Path Overlay) */}
@@ -318,7 +318,7 @@ export default function Gallery() {
             </div>
 
             {/* Scientific recovery report - TECHNICAL SHEET */}
-            <div className="bg-slate-900 text-white rounded-3.5xl p-6 sm:p-10 border border-white/5 shadow-2xl relative overflow-hidden">
+            <div className="hidden bg-slate-900 text-white rounded-3.5xl p-6 sm:p-10 border border-white/5 shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-primary/10 filter blur-3xl -z-0" />
               
               <div className="relative z-10 space-y-6">
@@ -389,12 +389,12 @@ export default function Gallery() {
                 <div className="border-t border-white/5 pt-5">
                   <h5 className="text-xs font-bold font-mono tracking-wider text-slate-400 uppercase mb-4 flex items-center gap-1.5">
                     <Gauge className="w-4 h-4 text-accent" />
-                    Comparativo de Estanqueidade & Desempenho
+                    Comparativo de Impermeabilização & Desempenho
                   </h5>
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
                     {[
-                      { metric: 'Estanqueidade', antes: activeSpec.parametrosAntes.estanqueidade, depois: activeSpec.parametrosDepois.estanqueidade },
+                      { metric: 'Impermeabilização', antes: activeSpec.parametrosAntes.impermeabilizacao, depois: activeSpec.parametrosDepois.impermeabilizacao },
                       { metric: 'Solo Base', antes: activeSpec.parametrosAntes.infiltracao, depois: activeSpec.parametrosDepois.infiltracao },
                       { metric: 'Acabamento', antes: activeSpec.parametrosAntes.acabamento, depois: activeSpec.parametrosDepois.acabamento },
                       { metric: 'Perda D\'água', antes: activeSpec.parametrosAntes.perda, depois: activeSpec.parametrosDepois.perda }

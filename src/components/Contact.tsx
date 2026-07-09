@@ -666,7 +666,7 @@ export default function Contact() {
                       </div>
 
                       <p className="text-xs text-slate-500 leading-relaxed">
-                        Toda obra estrutural, teste de estanqueidade, impermeabilização e projeto de revitalização conduzido pela <strong>Renova</strong> segue estritamente as diretrizes vigentes da ABNT:
+                        Toda obra estrutural, teste de impermeabilização e projeto de revitalização conduzido pela <strong>Renova</strong> segue estritamente as diretrizes vigentes da ABNT:
                       </p>
 
                       <div className="space-y-3">

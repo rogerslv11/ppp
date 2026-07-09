@@ -16,7 +16,7 @@ const row1Items: MarqueeItem[] = [
     id: 1,
     name: 'Roberto de Souza',
     role: 'Síndico do Residencial Royal Park',
-    text: 'A reforma estrutural da piscina coletiva do nosso condomínio em Porto Alegre foi impecável. Corrigiram vazamentos graves que tínhamos há anos e aplicaram revestimento de fibra de alta estanqueidade.',
+    text: 'A reforma estrutural da piscina coletiva do nosso condomínio em Porto Alegre foi impecável. Corrigiram vazamentos graves que tínhamos há anos e aplicaram revestimento de fibra de alta impermeabilização.',
     rating: 5,
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80',
     tag: 'Reforma Estrutural'
@@ -90,6 +90,8 @@ const row2Items: MarqueeItem[] = [
 ];
 
 export default function TestimonialMarquee() {
+  const allItems = [...row1Items, ...row2Items];
+
   return (
     <section className="py-20 bg-gradient-to-b from-bg-soft via-slate-50 to-white relative overflow-hidden border-t border-b border-slate-100">
       {/* Decorative localized styles for high-performance infinite scrolling */}
@@ -98,18 +100,10 @@ export default function TestimonialMarquee() {
           0% { transform: translate3d(0, 0, 0); }
           100% { transform: translate3d(-50%, 0, 0); }
         }
-        @keyframes marquee-right {
-          0% { transform: translate3d(-50%, 0, 0); }
-          100% { transform: translate3d(0, 0, 0); }
-        }
         .animate-scroll-left {
-          animation: marquee-left 40s linear infinite;
+          animation: marquee-left 45s linear infinite;
         }
-        .animate-scroll-right {
-          animation: marquee-right 40s linear infinite;
-        }
-        .marquee-container:hover .animate-scroll-left,
-        .marquee-container:hover .animate-scroll-right {
+        .marquee-container:hover .animate-scroll-left {
           animation-play-state: paused;
         }
       `}</style>
@@ -132,74 +126,15 @@ export default function TestimonialMarquee() {
       </div>
 
       {/* INFINITE SCROLL TRACKS CONTAINER */}
-      <div className="marquee-container space-y-6 select-none relative z-10 w-full overflow-hidden py-4">
+      <div className="marquee-container select-none relative z-10 w-full overflow-hidden py-4">
         
-        {/* ROW 1: Scrolling Left */}
+        {/* SINGLE ROW: Scrolling Left */}
         <div className="flex w-max relative">
           <div className="flex gap-6 pr-6 animate-scroll-left">
-            {/* Original Items + Duplicated Items for seamless loop */}
-            {[...row1Items, ...row1Items, ...row1Items].map((item, idx) => (
+            {/* Combined Items + Duplicated Items for seamless loop */}
+            {[...allItems, ...allItems].map((item, idx) => (
               <div
-                key={`row1-${item.id}-${idx}`}
-                className="w-[380px] sm:w-[420px] bg-white border border-slate-100 hover:border-primary/20 hover:shadow-xl hover:shadow-blue-500/5 p-6 rounded-3xl transition-all duration-300 flex flex-col justify-between shrink-0 group relative"
-              >
-                {/* Accent line on top of card */}
-                <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                
-                <div>
-                  {/* Card Header: Rating & Quote Accent */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex gap-0.5">
-                      {[...Array(item.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                      ))}
-                    </div>
-                    <Quote className="w-8 h-8 text-slate-100 group-hover:text-primary/10 transition-colors" />
-                  </div>
-
-                  {/* Feedback Text */}
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium line-clamp-4">
-                    "{item.text}"
-                  </p>
-                </div>
-
-                {/* Profile Section */}
-                <div className="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      referrerPolicy="no-referrer"
-                      className="w-10 h-10 rounded-xl object-cover border border-slate-100"
-                    />
-                    <div>
-                      <h4 className="font-display font-bold text-slate-900 text-xs sm:text-sm flex items-center gap-1">
-                        {item.name}
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" title="Verificado" />
-                      </h4>
-                      <p className="text-[10px] sm:text-xs text-slate-400 font-medium">
-                        {item.role}
-                      </p>
-                    </div>
-                  </div>
-                  {item.tag && (
-                    <span className="text-[9px] font-mono font-bold tracking-wider text-primary bg-primary/5 px-2.5 py-1 rounded-lg border border-primary/10 shrink-0">
-                      {item.tag}
-                    </span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ROW 2: Scrolling Right */}
-        <div className="flex w-max relative">
-          <div className="flex gap-6 pr-6 animate-scroll-right">
-            {/* Original Items + Duplicated Items for seamless loop */}
-            {[...row2Items, ...row2Items, ...row2Items].map((item, idx) => (
-              <div
-                key={`row2-${item.id}-${idx}`}
+                key={`row-${item.id}-${idx}`}
                 className="w-[380px] sm:w-[420px] bg-white border border-slate-100 hover:border-primary/20 hover:shadow-xl hover:shadow-blue-500/5 p-6 rounded-3xl transition-all duration-300 flex flex-col justify-between shrink-0 group relative"
               >
                 {/* Accent line on top of card */}

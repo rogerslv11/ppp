@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Phone, Droplet, Sparkles } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
+import Logo from './Logo';
 
 interface HeaderProps {
   onNavClick: (id: string) => void;
-  currentPage: 'home' | 'simulador';
-  onPageChange: (page: 'home' | 'simulador') => void;
 }
 
-export default function Header({ onNavClick, currentPage, onPageChange }: HeaderProps) {
+export default function Header({ onNavClick }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -18,7 +17,7 @@ export default function Header({ onNavClick, currentPage, onPageChange }: Header
   const navItems = [
     { label: 'Início', id: 'home' },
     { label: 'Serviços', id: 'servicos' },
-    { label: 'Simulador', id: 'simulador' },
+    { label: 'Diferenciais', id: 'diferenciais' },
     { label: 'Sobre Nós', id: 'sobre' },
     { label: 'Galeria', id: 'antes-depois' },
     { label: 'Contato', id: 'contato' },
@@ -26,12 +25,6 @@ export default function Header({ onNavClick, currentPage, onPageChange }: Header
 
   // Active section scroll detection & progress bar calculation
   useEffect(() => {
-    if (currentPage === 'simulador') {
-      setActiveSection('simulador');
-      setScrollProgress(100);
-      return;
-    }
-
     const handleScroll = () => {
       // Background shift when scrolling
       setIsScrolled(window.scrollY > 40);
@@ -45,7 +38,6 @@ export default function Header({ onNavClick, currentPage, onPageChange }: Header
       // Detect which section is currently active in viewport
       const scrollPosition = window.scrollY + 140; // Offset for header density
       for (const item of navItems) {
-        if (item.id === 'simulador') continue; // Skip in home scrolling
         const el = document.getElementById(item.id);
         if (el) {
           const top = el.offsetTop;
@@ -63,27 +55,12 @@ export default function Header({ onNavClick, currentPage, onPageChange }: Header
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [currentPage]);
+  }, []);
 
   const handleNavClickInternal = (id: string) => {
     setIsMobileMenuOpen(false);
-    if (id === 'simulador') {
-      onPageChange('simulador');
-      setActiveSection('simulador');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      if (currentPage === 'simulador') {
-        onPageChange('home');
-        // Wait a tick for DOM to mount home sections
-        setTimeout(() => {
-          onNavClick(id);
-          setActiveSection(id);
-        }, 100);
-      } else {
-        onNavClick(id);
-        setActiveSection(id);
-      }
-    }
+    onNavClick(id);
+    setActiveSection(id);
   };
 
   return (
@@ -108,20 +85,9 @@ export default function Header({ onNavClick, currentPage, onPageChange }: Header
           {/* Logo Brand */}
           <div 
             onClick={() => handleNavClickInternal('home')}
-            className="flex items-center gap-2.5 cursor-pointer group select-none"
+            className="cursor-pointer group"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-accent shadow-md shadow-primary/25 text-white group-hover:scale-105 group-hover:rotate-6 transition-all duration-300">
-              <Droplet className="w-5.5 h-5.5" />
-              <Sparkles className="w-3.5 h-3.5 absolute top-0.5 right-0.5 text-yellow-200 animate-pulse" />
-            </div>
-            <div>
-              <span className="font-display font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 flex items-center leading-none">
-                Renova
-              </span>
-              <p className="text-[8.5px] font-mono font-bold tracking-[0.2em] text-slate-500 uppercase leading-none mt-1">
-                Reforma Premium
-              </p>
-            </div>
+            <Logo size="md" />
           </div>
 
           {/* Desktop Navigation (Exactly 6 Links) */}
@@ -216,17 +182,7 @@ export default function Header({ onNavClick, currentPage, onPageChange }: Header
             >
               <div>
                 <div className="flex items-center justify-between pb-5 border-b border-slate-100">
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center justify-center w-8.5 h-8.5 rounded-lg bg-primary text-white shadow-sm">
-                      <Droplet className="w-4.5 h-4.5" />
-                    </div>
-                    <div>
-                      <span className="font-display font-bold text-slate-900 tracking-tight block text-sm leading-none">
-                        Renova
-                      </span>
-                      <span className="text-[8px] font-mono text-slate-400 font-semibold tracking-wider">ENGENHARIA</span>
-                    </div>
-                  </div>
+                  <Logo size="sm" />
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="w-8.5 h-8.5 flex items-center justify-center rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors"
