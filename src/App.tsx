@@ -9,7 +9,6 @@ import Services from './components/Services';
 import TestimonialMarquee from './components/TestimonialMarquee';
 import HowWeWork from './components/HowWeWork';
 import Differentiators from './components/Differentiators';
-import PoolEstimator from './components/PoolEstimator';
 import Gallery from './components/Gallery';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
@@ -74,9 +73,6 @@ export default function App() {
 
         {/* Standardized Glassmorphism Differentiators */}
         <Differentiators />
-
-        {/* Interactive Pool Volume & Chemical Treatment Estimator */}
-        <PoolEstimator />
 
         {/* Before/After sliding comparisons and Masonry Photo portfolio */}
         <Gallery />

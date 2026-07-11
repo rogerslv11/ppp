@@ -105,7 +105,7 @@ export default function HowWeWork() {
                   </div>
                   
                   {/* Step numeric outline */}
-                  <span className="font-display font-black text-4xl tracking-tighter text-slate-100 group-hover:text-primary/10 select-none transition-colors duration-300">
+                  <span className="font-display font-black text-4.5xl tracking-tighter text-blue-500/25 group-hover:text-blue-600/50 select-none transition-colors duration-300">
                     {step.number}
                   </span>
                 </div>
