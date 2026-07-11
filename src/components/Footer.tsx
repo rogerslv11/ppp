@@ -73,79 +73,6 @@ export default function Footer({ onNavClick }: FooterProps) {
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* UPPER PART: BRAND & NEWSLETTER ACTION */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-16 border-b border-white/5 items-center">
-          {/* Logo & Slogan info */}
-          <div className="lg:col-span-5 space-y-3">
-            <div 
-              onClick={() => handleNavClickInternal('home')}
-              className="cursor-pointer group w-fit"
-            >
-              <Logo size="md" dark={true} />
-            </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md">
-              A excelência técnica que sua piscina residencial ou de condomínio merece. Desenvolvemos soluções inteligentes com foco em impermeabilização, reformas e laudos de engenharia.
-            </p>
-          </div>
-
-          {/* Premium Newsletter sign-up box */}
-          <div className="lg:col-span-7 bg-white/2.5 border border-white/5 p-6 sm:p-8 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="space-y-1.5 text-left max-w-sm">
-              <span className="text-[9px] font-mono font-bold tracking-widest text-accent uppercase block">Informativo Mensal</span>
-              <h4 className="font-display font-bold text-white text-base">Receba Dicas de Valorização & Reformas</h4>
-              <p className="text-slate-400 text-xs leading-normal">
-                Conteúdos elaborados por engenheiros experientes sobre conservação e impermeabilização de piscinas.
-              </p>
-            </div>
-
-            <div className="w-full md:w-auto min-w-[280px] shrink-0">
-              <AnimatePresence mode="wait">
-                {!subbed ? (
-                  <motion.form 
-                    key="newsletter-form"
-                    onSubmit={handleSubscribe} 
-                    className="flex gap-2 relative"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  >
-                    <input
-                      type="email"
-                      required
-                      placeholder="Seu melhor e-mail..."
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-xs font-semibold text-white placeholder-slate-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-all"
-                    />
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className="px-4 bg-accent hover:bg-accent-light text-brand-dark rounded-xl font-bold text-xs flex items-center justify-center transition-all cursor-pointer shrink-0 disabled:opacity-50"
-                      title="Inscrever-se"
-                    >
-                      {loading ? (
-                        <div className="w-4 h-4 border-2 border-brand-dark border-t-transparent rounded-full animate-spin" />
-                      ) : (
-                        <Send className="w-3.5 h-3.5" />
-                      )}
-                    </button>
-                  </motion.form>
-                ) : (
-                  <motion.div 
-                    key="newsletter-success"
-                    className="flex items-center gap-2 text-emerald-400 font-bold text-xs bg-emerald-500/10 p-3.5 rounded-xl border border-emerald-500/20"
-                    initial={{ scale: 0.95, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                  >
-                    <CheckCircle2 className="w-4.5 h-4.5 shrink-0" />
-                    <span>Inscrição Confirmada com Sucesso!</span>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </div>
-        </div>
-
         {/* MIDDLE PART: 4-COLUMN DETAILED RESOURCES & ACCREDITATIONS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 py-16 border-b border-white/5">
           
@@ -203,7 +130,7 @@ export default function Footer({ onNavClick }: FooterProps) {
               </div>
               <div className="flex gap-2.5 items-start">
                 <Mail className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                <span className="break-all">engenharia@piscinacleanpro.com.br</span>
+                <span className="break-all">contato@renovapro.com.br</span>
               </div>
             </div>
           </div>

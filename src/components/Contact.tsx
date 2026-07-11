@@ -48,7 +48,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [protocol, setProtocol] = useState('');
-  const [activeTab, setActiveTab] = useState<'canais' | 'equipe' | 'normas'>('canais');
+  const [activeTab, setActiveTab] = useState<'canais' | 'normas'>('canais');
 
   // Field Change Handler
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -156,14 +156,14 @@ export default function Contact() {
         <div className="text-center max-w-3xl mx-auto mb-20 sm:mb-24 gsap-reveal">
           <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase font-mono px-3.5 py-1.5 bg-blue-50 border border-blue-100 rounded-full inline-flex items-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5" />
-            Central de Engenharia
+            Central de Atendimento
           </span>
           <h2 className="font-display font-extrabold text-3xl sm:text-4.5xl text-slate-900 tracking-tight mt-6 leading-none">
-            Agende uma Avaliação Técnica de Engenharia
+            Agende uma Avaliação Técnica
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-5 mx-auto" />
           <p className="text-slate-500 text-sm sm:text-base mt-5 leading-relaxed">
-            Preencha o formulário e nosso time de engenharia retornará via WhatsApp para agendar uma vistoria técnica e emitir o orçamento detalhado de sua piscina.
+            Preencha o formulário e nosso time retornará via WhatsApp para agendar uma vistoria técnica e emitir o orçamento detalhado de sua piscina.
           </p>
         </div>
 
@@ -466,18 +466,6 @@ export default function Contact() {
                   </button>
                   <button
                     type="button"
-                    onClick={() => setActiveTab('equipe')}
-                    className={`flex-1 py-3 text-xs font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
-                      activeTab === 'equipe'
-                        ? 'bg-primary text-white shadow-md shadow-primary/10'
-                        : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50'
-                    }`}
-                  >
-                    <Users className="w-3.5 h-3.5" />
-                    <span>Engenharia</span>
-                  </button>
-                  <button
-                    type="button"
                     onClick={() => setActiveTab('normas')}
                     className={`flex-1 py-3 text-xs font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
                       activeTab === 'normas'
@@ -575,74 +563,6 @@ export default function Contact() {
                             </p>
                           </div>
                         </div>
-                      </div>
-                    </motion.div>
-                  )}
-
-                  {activeTab === 'equipe' && (
-                    <motion.div
-                      key="equipe-tab"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.25 }}
-                      className="space-y-4"
-                    >
-                      <div className="flex items-center justify-between border-b border-slate-50 pb-3">
-                        <h3 className="font-display font-bold text-slate-900 text-lg">
-                          Engenheiros de Plantão
-                        </h3>
-                        <div className="px-2 py-0.5 bg-blue-50 text-primary border border-blue-100 font-mono text-[8.5px] font-bold rounded">
-                          CREA Ativo
-                        </div>
-                      </div>
-
-                      <div className="space-y-3.5">
-                        {[
-                          {
-                            nome: 'Eng. Roberto Mendes',
-                            cargo: 'Diretor de Engenharia Civil',
-                            crea: 'CREA-RS 148293',
-                            status: 'Disponível',
-                            statusColor: 'bg-emerald-500',
-                            img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100&q=80'
-                          },
-                          {
-                            nome: 'Engª. Clarissa Werner',
-                            cargo: 'Especialista em Estruturas & Impermeabilização',
-                            crea: 'CREA-RS 220194',
-                            status: 'Em Vistoria Técnica',
-                            statusColor: 'bg-amber-500',
-                            img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&h=100&q=80'
-                          },
-                          {
-                            nome: 'Quím. Marcos Oliveira',
-                            cargo: 'Tratamento & Química de Águas',
-                            crea: 'CRQ-V 054001',
-                            status: 'Disponível',
-                            statusColor: 'bg-emerald-500',
-                            img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&h=100&q=80'
-                          }
-                        ].map((membro, i) => (
-                          <div key={i} className="flex items-center gap-3.5 p-3 rounded-2xl bg-slate-50/70 border border-slate-100/50 hover:bg-slate-50 hover:border-slate-100 transition-colors">
-                            <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-slate-200 border border-slate-100 shrink-0">
-                              <img src={membro.img} alt={membro.nome} className="w-full h-full object-cover" />
-                              <span className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${membro.statusColor}`} />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center justify-between gap-1">
-                                <h4 className="font-display font-bold text-slate-900 text-xs sm:text-sm truncate">
-                                  {membro.nome}
-                                </h4>
-                                <span className="font-mono text-[9px] font-bold text-slate-400 shrink-0 uppercase tracking-tight">
-                                  {membro.status}
-                                </span>
-                              </div>
-                              <p className="text-[10px] text-slate-500 truncate leading-relaxed mt-0.5">{membro.cargo}</p>
-                              <p className="text-[9px] font-mono text-primary font-bold mt-0.5">{membro.crea}</p>
-                            </div>
-                          </div>
-                        ))}
                       </div>
                     </motion.div>
                   )}
