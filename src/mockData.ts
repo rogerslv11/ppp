@@ -128,42 +128,42 @@ export const galleryData: GalleryItem[] = [
     id: 1,
     title: 'Impermeabilização de Reservatório',
     category: 'impermeabilizacao',
-    image: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80',
+    images: ['https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80'],
     caption: 'Aplicação de fibra de vidro de alta pureza em reservatório industrial de água potável.'
   },
   {
     id: 2,
     title: 'Construção de Deck de Ipê Nobre',
     category: 'reforma',
-    image: 'https://images.unsplash.com/photo-1518098268026-4e43a1a009de?auto=format&fit=crop&w=800&q=80',
+    images: ['https://images.unsplash.com/photo-1518098268026-4e43a1a009de?auto=format&fit=crop&w=800&q=80'],
     caption: 'Deck de madeira tratada construído ao redor de piscina revitalizada de alvenaria.'
   },
   {
     id: 3,
     title: 'Reforma de Vinil para Alvenaria',
     category: 'reforma',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
+    images: ['https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80'],
     caption: 'Reconstrução estrutural transformando uma piscina antiga de vinil em alvenaria com pastilhas.'
   },
   {
     id: 4,
     title: 'Revitalização em Pastilhas de Vidro',
     category: 'reforma',
-    image: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80',
+    images: ['https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80'],
     caption: 'Revestimento de alto padrão assentado em piscina aquecida de condomínio em Porto Alegre.'
   },
   {
     id: 5,
     title: 'Aplicação de Revestimento de Fibra',
     category: 'impermeabilizacao',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+    images: ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'],
     caption: 'Laminação em fibra de vidro azul bebê para impermeabilização integral de piscina residencial.'
   },
   {
     id: 6,
     title: 'Instalação Hidráulica de Casa de Máquinas',
     category: 'vazamento',
-    image: 'https://images.unsplash.com/photo-1533038590840-1cde6e668a91?auto=format&fit=crop&w=800&q=80',
+    images: ['https://images.unsplash.com/photo-1533038590840-1cde6e668a91?auto=format&fit=crop&w=800&q=80'],
     caption: 'Conjunto hidráulico de alta vazão com novas moto-bombas silenciosas e filtro de quartzo.'
   }
 ];
@@ -241,25 +241,5 @@ export const teamMembers: TeamMember[] = [
     experience: '20+ anos de experiência',
     bio: 'Especialista em patologias de concreto armado e grandes estruturas. Lidera o planejamento técnico de reformas estruturais e impermeabilizações complexas.',
     expertise: ['Engenharia Estrutural', 'Perícia de Vazamentos', 'Impermeabilização']
-  },
-  {
-    id: 2,
-    name: 'Tiago Santos',
-    role: 'Coordenador de Obras e Instalações',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&h=300&q=80',
-    certification: 'Técnico em Edificações & Hidráulica',
-    experience: '12 anos de experiência',
-    bio: 'Líder técnico especialista na aplicação de fibra de vidro, assentamento de revestimentos premium e montagem de redes hidráulicas de alta pressão.',
-    expertise: ['Reboco e Alvenaria', 'Laminação de Fibra', 'Redes Hidráulicas']
-  },
-  {
-    id: 3,
-    name: 'Ana Carolina Viana',
-    role: 'Gestora de Projetos e Atendimento',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&h=300&q=80',
-    certification: 'Planejamento e Orçamentos de Obras',
-    experience: '8 anos de experiência',
-    bio: 'Responsável pelo acompanhamento de cronogramas, orçamentos detalhados de engenharia e suporte VIP para condomínios e residências.',
-    expertise: ['Cronogramas', 'Orçamentos ART', 'Suporte ao Cliente']
   }
 ];

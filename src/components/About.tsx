@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'motion/react';
-import { Check, ShieldAlert, Award, Star, BookOpen, Target, Heart, Briefcase } from 'lucide-react';
+import { Check, ShieldAlert, Award, Star, BookOpen, Target, Heart, Briefcase, Quote, Sparkles } from 'lucide-react';
 import { gsap } from 'gsap';
 import { teamMembers } from '../mockData';
 import { TeamMember } from '../types';
@@ -326,24 +326,108 @@ export default function About() {
           </div>
         </div>
 
-        {/* Specialized Team Grid */}
-        <div className="mt-24 pt-12 border-t border-slate-100">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold tracking-widest text-primary uppercase font-mono">
-              Especialistas Certificados
-            </span>
-            <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight mt-2">
-              Nossa Equipe de Operações
-            </h3>
-            <p className="text-slate-500 text-sm mt-3">
-              Não terceirizamos. Contamos com um corpo técnico próprio de engenharia civil, técnicos em edificações e laminadores experientes para executar seu projeto com perfeição e segurança.
-            </p>
+        {/* Founder & Biography Section */}
+        <div className="mt-32 pt-20 border-t border-slate-100 relative">
+          {/* Background Label */}
+          <div className="absolute top-10 left-1/2 -translate-x-1/2 text-[120px] font-display font-black text-slate-50 select-none pointer-events-none whitespace-nowrap opacity-50">
+            LIDERANÇA
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gsap-stagger-container">
-            {teamMembers.map((member, idx) => (
-              <TeamMemberCard key={member.id} member={member} idx={idx} />
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 relative z-10">
+            
+            {/* Left: Leadership Profile Card */}
+            <div className="lg:col-span-5">
+              <div className="mb-10">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-primary border border-blue-100 mb-4">
+                  <Star className="w-3 h-3 fill-primary" />
+                  <span className="text-[10px] font-bold tracking-widest uppercase font-mono">Expertise Técnica de Elite</span>
+                </div>
+                <h3 className="font-display font-black text-4xl sm:text-5xl text-slate-900 tracking-tight leading-none">
+                  Marcos <br />
+                  Oliveira
+                </h3>
+                <p className="text-slate-500 font-medium mt-4 text-lg">Fundador & Diretor Técnico</p>
+              </div>
+              
+              <div className="gsap-stagger-container relative">
+                {/* Decorative element behind card */}
+                <div className="absolute -inset-4 bg-gradient-to-tr from-primary/5 to-accent/5 rounded-[4rem] -z-10 blur-2xl" />
+                <TeamMemberCard member={teamMembers[0]} idx={0} />
+              </div>
+              
+              <div className="mt-12 grid grid-cols-2 gap-4">
+                {[
+                  { label: 'Impermeabilização', icon: <ShieldAlert className="w-4 h-4" /> },
+                  { label: 'Reformas Premium', icon: <Sparkles className="w-4 h-4" /> },
+                  { label: 'Vazamentos', icon: <Target className="w-4 h-4" /> },
+                  { label: 'Reservatórios', icon: <Briefcase className="w-4 h-4" /> },
+                ].map((item, i) => (
+                  <div key={i} className="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-white shadow-sm flex items-center justify-center text-primary">
+                      {item.icon}
+                    </div>
+                    <span className="text-xs font-bold text-slate-700">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Detailed Biography */}
+            <div className="lg:col-span-7 flex flex-col justify-center">
+              <div className="relative">
+                <Quote className="absolute -top-10 -left-10 w-20 h-20 text-slate-100 -z-10" />
+                
+                <div className="space-y-8 text-slate-600 text-lg sm:text-xl leading-relaxed text-justify sm:text-left">
+                  <p className="first-letter:text-5xl first-letter:font-display first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">
+                    Sou natural da cidade de Rivera, no Uruguai, e vivo no Brasil desde 1986. Há mais de 20 anos resido em Gravataí (RS), onde construí minha família, minha carreira e minha história. Hoje sou brasileiro naturalizado e tenho orgulho de contribuir com o desenvolvimento da nossa região por meio do meu trabalho.
+                  </p>
+                  
+                  <p>
+                    Minha trajetória profissional na construção civil começou muito antes de chegar ao Rio Grande do Sul. Trabalhei como ajudante de obras e participei de importantes construções em Punta del Este, no Uruguai, adquirindo experiência prática em obras de grande porte.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-10">
+                    <div className="p-6 rounded-2xl bg-blue-50/50 border border-blue-100/50">
+                      <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white mb-4 shadow-lg shadow-primary/20">
+                        <Award className="w-5 h-5" />
+                      </div>
+                      <h5 className="font-bold text-slate-900 mb-2">Legado em Fibra</h5>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        Aprendi as técnicas de fibra de vidro com o Sr. Raul, referência na região, unindo esse saber à minha base sólida em engenharia civil.
+                      </p>
+                    </div>
+                    <div className="p-6 rounded-2xl bg-cyan-50/50 border border-cyan-100/50">
+                      <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-white mb-4 shadow-lg shadow-accent/20">
+                        <Briefcase className="w-5 h-5" />
+                      </div>
+                      <h5 className="font-bold text-slate-900 mb-2">Experiência Corporativa</h5>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        Atuei por sete anos no acompanhamento de obras para a Katerra, participando de grandes empreendimentos do Grupo Zaffari.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p>
+                    Há mais de cinco anos iniciei a <strong>Renova</strong>, um nome que considero um propósito. Acredito que recebi o dom de renovar estruturas e devolver vida a ambientes que precisam de recuperação, entregando sempre soluções duráveis e seguras.
+                  </p>
+
+                  <p>
+                    Cristão há 26 anos e pastor há 10, participo de trabalhos missionários e contribuo tecnicamente na construção e manutenção de templos. Para mim, servir ao Reino vai além da pregação: é colocar as mãos à obra para edificar o que glorifica ao Senhor.
+                  </p>
+
+                  <div className="mt-12 p-8 rounded-3xl bg-slate-900 text-white relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-primary/20 transition-all duration-700" />
+                    <p className="relative z-10 italic text-lg sm:text-xl font-medium leading-relaxed">
+                      "Hoje, aos 53 anos, minha história é construída sobre três pilares: fé em Deus, compromisso com a família e excelência no trabalho. Renovar estruturas é importante, mas renovar vidas é o meu maior propósito."
+                    </p>
+                    <div className="mt-6 flex items-center gap-3 relative z-10">
+                      <div className="w-8 h-px bg-primary" />
+                      <span className="text-sm font-mono tracking-widest uppercase text-slate-400">Marcos Oliveira</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

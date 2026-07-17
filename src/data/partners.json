@@ -1,0 +1,86 @@
+[
+  {
+    "id": "cyrela",
+    "name": "Cyrela",
+    "category": "Incorporadora",
+    "logo": "https://logo.clearbit.com/cyrela.com.br"
+  },
+  {
+    "id": "atmosphere",
+    "name": "Atmosphere",
+    "category": "Condomínio",
+    "logo": "https://ui-avatars.com/api/?name=Atmosphere&background=f8fafc&color=0f172a&size=128&font-size=0.33"
+  },
+  {
+    "id": "alianca",
+    "name": "Aliança",
+    "category": "Empreendimentos",
+    "logo": "https://logo.clearbit.com/alianca.com"
+  },
+  {
+    "id": "prado",
+    "name": "Prado",
+    "category": "Bairro Planejado",
+    "logo": "https://ui-avatars.com/api/?name=Prado&background=f8fafc&color=0f172a&size=128&font-size=0.33"
+  },
+  {
+    "id": "azenha",
+    "name": "Azenha",
+    "category": "Administradora",
+    "logo": "https://logo.clearbit.com/azenha.com.br"
+  },
+  {
+    "id": "credito-real",
+    "name": "Crédito Real",
+    "category": "Administradora",
+    "logo": "https://logo.clearbit.com/creditoreal.com.br"
+  },
+  {
+    "id": "auxiliadora-predial",
+    "name": "Auxiliadora Predial",
+    "category": "Administradora",
+    "logo": "https://logo.clearbit.com/auxiliadorapredial.com.br"
+  },
+  {
+    "id": "bolognesi",
+    "name": "Bolognesi",
+    "category": "Engenharia",
+    "logo": "https://logo.clearbit.com/bolognesi.com.br"
+  },
+  {
+    "id": "katerra",
+    "name": "Katerra",
+    "category": "Construção Civil",
+    "logo": "https://logo.clearbit.com/katerra.com"
+  },
+  {
+    "id": "igui",
+    "name": "iGUi",
+    "category": "Piscinas",
+    "logo": "https://logo.clearbit.com/igui.com"
+  },
+  {
+    "id": "rimax",
+    "name": "Rimax",
+    "category": "Engenharia",
+    "logo": "https://logo.clearbit.com/rimax.com"
+  },
+  {
+    "id": "renova",
+    "name": "Renova",
+    "category": "Soluções Prediais",
+    "logo": "https://ui-avatars.com/api/?name=Renova&background=f8fafc&color=0f172a&size=128&font-size=0.33"
+  },
+  {
+    "id": "alphaville",
+    "name": "Alphaville",
+    "category": "Bairro Planejado",
+    "logo": "https://logo.clearbit.com/alphaville.com.br"
+  },
+  {
+    "id": "led-piscinas",
+    "name": "LED Piscinas",
+    "category": "Piscinas",
+    "logo": "https://ui-avatars.com/api/?name=LED+Piscinas&background=f8fafc&color=0f172a&size=128&font-size=0.33"
+  }
+]

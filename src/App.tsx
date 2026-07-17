@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
-import TestimonialMarquee from './components/TestimonialMarquee';
+import PartnerMarquee from './components/PartnerMarquee';
 import HowWeWork from './components/HowWeWork';
 import Differentiators from './components/Differentiators';
 import Gallery from './components/Gallery';
@@ -62,8 +62,8 @@ export default function App() {
         {/* Dynamic Services Grid (with interactive detail overlays) */}
         <Services />
 
-        {/* Seamless horizontal customer reviews infinite scroll */}
-        <TestimonialMarquee />
+        {/* Portfólio de parceiros e clientes corporativos */}
+        <PartnerMarquee />
 
         {/* Structural Horizontal Timeline workflow */}
         <HowWeWork />

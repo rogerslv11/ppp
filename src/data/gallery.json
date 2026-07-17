@@ -1,0 +1,177 @@
+{
+  "beforeAfterCases": [
+    {
+      "id": 1,
+      "title": "Impermeabilização Estrutural",
+      "subtitle": "Vazamento Crítico",
+      "beforeImage": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1200&h=800&q=80",
+      "afterImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&h=800&q=80",
+      "description": "Selagem profunda de trincas ativas e aplicação de barreira monolítica em piscina de alvenaria com vazamento severo.",
+      "technicalSpec": {
+        "volume": "45.000 Litros",
+        "tempo": "5 Dias Úteis",
+        "diagnostico": "Piscina antiga de alvenaria com vazamento estrutural severo, perdendo cerca de 3.200 litros de água por dia. Fissura ativa na transição entre fundo e parede d'água devido a recalque diferencial de fundações.",
+        "tratamento": "Injeção estrutural de poliuretano expandido hidroativo para selagem de trincas profundas, seguida de revestimento contínuo em fibra de vidro com resina isoftálica.",
+        "produtos": "Poliuretano expandido, Resina Isoftálica, Manta de Fibra de Vidro (300g/m²)",
+        "responsavel": "Marcos Oliveira (CREA-RS: 507.123)",
+        "parametrosAntes": { "impermeabilizacao": "Comprometida", "infiltracao": "Solo encharcado", "acabamento": "Crítico", "perda": "3.200L/dia" },
+        "parametrosDepois": { "impermeabilizacao": "100%", "infiltracao": "Solo seco", "acabamento": "Liner em Fibra", "perda": "Zero" }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Restauração de Osmose",
+      "subtitle": "Revitalização Estética",
+      "beforeImage": "https://images.unsplash.com/photo-1562778612-e1e0cda9915c?auto=format&fit=crop&w=1200&h=800&q=80",
+      "afterImage": "https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=1200&h=800&q=80",
+      "description": "Fresagem de bolhas em fibra e pintura de alta tecnologia gel-coat em piscina de fibra desbotada.",
+      "technicalSpec": {
+        "volume": "32.000 Litros",
+        "tempo": "3 Dias Úteis",
+        "diagnostico": "Piscina de fibra desbotada, com descolamento estético de pintura, bolhas de osmose em estágio avançado e infiltrações na tubulação.",
+        "tratamento": "Fresagem mecânica e raspagem das bolhas de osmose, lixamento, laminação de reforço e pintura com gel-coat náutico premium.",
+        "produtos": "Gel-coat Azul Real Náutico, Manta de Fibra, Cera Selante",
+        "responsavel": "Marcos Oliveira (CREA-RS: 507.123)",
+        "parametrosAntes": { "impermeabilizacao": "Frágil", "infiltracao": "Risco de vazamento", "acabamento": "Fosco", "perda": "Infiltrações" },
+        "parametrosDepois": { "impermeabilizacao": "Reforço Ativo", "infiltracao": "Vedado", "acabamento": "Espelhado", "perda": "Zero" }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Retrofit Moderno",
+      "subtitle": "Troca de Revestimento",
+      "beforeImage": "https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?auto=format&fit=crop&w=1200&h=800&q=80",
+      "afterImage": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&h=800&q=80",
+      "description": "Transformação completa de revestimento cerâmico antigo para pastilhas de vidro modernas com iluminação LED.",
+      "technicalSpec": {
+        "volume": "58.000 Litros",
+        "tempo": "12 Dias Úteis",
+        "diagnostico": "Revestimento cerâmico soltando, rejunte preto com fungos e sistema de iluminação obsoleto e perigoso.",
+        "tratamento": "Remoção total do revestimento antigo, regularização com argamassa técnica impermeável, aplicação de pastilhas de vidro e novo sistema LED RGB.",
+        "produtos": "Argamassa AC-III, Pastilhas de Vidro, LED Subaquático 18W",
+        "responsavel": "Marcos Oliveira (CREA-RS: 507.123)",
+        "parametrosAntes": { "impermeabilizacao": "Média", "infiltracao": "Umidade periférica", "acabamento": "Obsoleto", "perda": "Evaporação excessiva" },
+        "parametrosDepois": { "impermeabilizacao": "Tripla Camada", "infiltracao": "Isolado", "acabamento": "Alto Padrão", "perda": "Mínima" }
+      }
+    }
+  ],
+  "portfolioItems": [
+    {
+      "id": 1,
+      "title": "Impermeabilização em Mansão",
+      "category": "impermeabilizacao",
+      "images": [
+        "https://images.unsplash.com/photo-1595181867384-0332cd5e19a1?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1518098268026-4e43a1a009de?auto=format&fit=crop&w=800&q=80"
+      ],
+      "caption": "Aplicação de manta asfáltica líquida de alta performance em piscina de borda infinita."
+    },
+    {
+      "id": 2,
+      "title": "Reforma Residencial Premium",
+      "category": "reforma",
+      "images": [
+        "https://images.unsplash.com/photo-1560742124-275138ed499b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1562778612-e1e0cda9915c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "caption": "Troca completa de azulejos e instalação de sistema de aquecimento solar."
+    },
+    {
+      "id": 3,
+      "title": "Detecção e Reparo de Fissura",
+      "category": "vazamento",
+      "images": [
+        "https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1533038590840-1cde6e668a91?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1582266255745-9e3f9b42360c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "caption": "Detecção eletrônica e reparo estrutural subaquático sem esvaziar a piscina."
+    },
+    {
+      "id": 4,
+      "title": "Piscina Comercial Olímpica",
+      "category": "impermeabilizacao",
+      "images": [
+        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1470282312847-28b9430460fb?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1595181867384-0332cd5e19a1?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"
+      ],
+      "caption": "Tratamento de impermeabilização em piscina olímpica de centro esportivo."
+    },
+    {
+      "id": 5,
+      "title": "Design Moderno & Deck",
+      "category": "reforma",
+      "images": [
+        "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1518098268026-4e43a1a009de?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1560742124-275138ed499b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "caption": "Modernização de deck e revestimento com estética minimalista e cores neutras."
+    },
+    {
+      "id": 6,
+      "title": "Revisão Preventiva Técnica",
+      "category": "vazamento",
+      "images": [
+        "https://images.unsplash.com/photo-1582266255745-9e3f9b42360c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1562778612-e1e0cda9915c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1533038590840-1cde6e668a91?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "caption": "Inspeção técnica e substituição de filtros e bombas para evitar futuras infiltrações."
+    },
+    {
+      "id": 7,
+      "title": "Impermeabilização em Rooftop",
+      "category": "impermeabilizacao",
+      "images": [
+        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1470282312847-28b9430460fb?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1595181867384-0332cd5e19a1?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"
+      ],
+      "caption": "Proteção técnica de alta durabilidade para piscinas suspensas em coberturas de luxo."
+    },
+    {
+      "id": 8,
+      "title": "Retrofit de Iluminação LED",
+      "category": "reforma",
+      "images": [
+        "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1518098268026-4e43a1a009de?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1560742124-275138ed499b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "caption": "Substituição de refletores antigos por sistema LED RGB de última geração com controle remoto."
+    },
+    {
+      "id": 9,
+      "title": "Selagem de Tubulações",
+      "category": "vazamento",
+      "images": [
+        "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1582266255745-9e3f9b42360c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1562778612-e1e0cda9915c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1533038590840-1cde6e668a91?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&w=800&q=80"
+      ],
+      "caption": "Correção de infiltrações em conexões críticas utilizando resinas expansivas de secagem rápida."
+    }
+  ]
+}

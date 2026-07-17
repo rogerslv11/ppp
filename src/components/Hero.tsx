@@ -11,9 +11,10 @@ export default function Hero({ onCtaClick }: HeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroImages = [
-    'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1600&q=80', // Infinity Pool
-    'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1600&q=80', // Clear Resort Pool
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80', // Pool Deck Modern House
+    'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1600&q=80', // Modern Infinity Pool
+    'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80', // Clean Pool Water Detail
+    'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80', // High-end Residential Pool
+    'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80', // Resort Style Pool
   ];
 
   const stats: StatItem[] = [
