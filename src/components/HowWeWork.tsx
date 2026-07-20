@@ -15,7 +15,7 @@ export default function HowWeWork() {
     {
       number: '02',
       title: 'Visita Técnica Gratuita',
-      focus: 'Diagnóstico de Engenharia',
+      focus: 'Diagnóstico Especializado',
       duration: 'Agendamento Flexível',
       description: 'Nossa equipe qualificada inspeciona patologias do concreto, fissuras estruturais e faz testes de impermeabilização hidráulica.',
       icon: <Search className="w-5 h-5" />,

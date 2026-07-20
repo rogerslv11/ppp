@@ -493,7 +493,7 @@ export default function Contact() {
                           Canais Corporativos
                         </h3>
                         <div className="px-2.5 py-1 bg-emerald-50 text-emerald-600 border border-emerald-100 font-mono text-[9px] font-bold rounded uppercase">
-                          Engenharia de Plantão
+                          Suporte Especializado
                         </div>
                       </div>
 
@@ -508,7 +508,7 @@ export default function Contact() {
                               Telefone & WhatsApp
                             </h4>
                             <p className="text-slate-800 font-bold text-sm sm:text-base mt-1.5 hover:text-primary transition-colors">
-                              <a href="https://wa.me/5551999999999">+55 (51) 99999-9999</a>
+                              <a href="https://wa.me/5551985733001">+55 (51) 98573-3001</a>
                             </p>
                             <p className="text-[10px] text-emerald-600 font-mono font-medium mt-1 flex items-center gap-1">
                               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -527,7 +527,7 @@ export default function Contact() {
                               E-mail Corporativo
                             </h4>
                             <p className="text-slate-800 font-bold text-sm sm:text-base mt-1.5 hover:text-primary transition-colors">
-                              <a href="mailto:contato@renovapro.com.br">contato@renovapro.com.br</a>
+                              <a href="mailto:renovapiscina1973@gmail.com">renovapiscina1973@gmail.com</a>
                             </p>
                           </div>
                         </div>
@@ -558,8 +558,8 @@ export default function Contact() {
                               Sede Operacional / Logística
                             </h4>
                             <p className="text-slate-700 text-xs sm:text-sm font-semibold mt-1.5 leading-relaxed font-sans">
-                              Av. Getúlio Vargas, 1200 - Menino Deus <br />
-                              Porto Alegre - RS, CEP 90150-002
+                              Rua Itapetininga 178 - São Judas Tadeu <br />
+                              Gravataí - RS, CEP 94075-040
                             </p>
                           </div>
                         </div>

@@ -262,7 +262,7 @@ ${selectedServices.includes('deck') ? `• Área do Deck Desejado: ${deckSize} m
 • Prazo Estimado de Execução: ${timeline}
 • Estimativa de Custo (Preparo + Obra): R$ ${estimatedCostMin.toLocaleString('pt-BR')} a R$ ${estimatedCostMax.toLocaleString('pt-BR')}
 
-Por favor, gostaria de agendar uma visita técnica de engenharia em Porto Alegre para confirmar a impermeabilização e validar o orçamento definitivo.`;
+Por favor, gostaria de agendar uma visita técnica especializada em Porto Alegre para confirmar a impermeabilização e validar o orçamento definitivo.`;
 
     const encodedText = encodeURIComponent(msg);
     window.open(`https://wa.me/5551999999999?text=${encodedText}`, '_blank', 'noopener,noreferrer');
@@ -309,7 +309,7 @@ Por favor, gostaria de agendar uma visita técnica de engenharia em Porto Alegre
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="text-xs font-bold tracking-widest text-primary uppercase font-mono flex items-center justify-center gap-1.5">
             <Calculator className="w-3.5 h-3.5" />
-            Engenharia Interativa
+            Simulador Especialista
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4.5xl text-slate-900 tracking-tight mt-2">
             Simulador de Reforma & Impermeabilização
@@ -484,7 +484,7 @@ Por favor, gostaria de agendar uma visita técnica de engenharia em Porto Alegre
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-slate-900 text-base">Serviços Desejados</h3>
-                  <p className="text-xs text-slate-400 font-medium">Selecione uma ou mais soluções de engenharia</p>
+                  <p className="text-xs text-slate-400 font-medium">Selecione uma ou mais soluções especializadas</p>
                 </div>
               </div>
 
@@ -619,7 +619,7 @@ Por favor, gostaria de agendar uma visita técnica de engenharia em Porto Alegre
                       </span>
                     </div>
                     <span className="text-[10px] text-slate-500 font-medium block mt-1 leading-normal">
-                      *Estimativa inclui preparação de superfície, aplicação técnica de produtos de engenharia e mão de obra profissional qualificada.
+                      *Estimativa inclui preparação de superfície, aplicação técnica de produtos e mão de obra profissional qualificada.
                     </span>
                   </div>
 
@@ -633,7 +633,7 @@ Por favor, gostaria de agendar uma visita técnica de engenharia em Porto Alegre
                       </div>
                       <div className="flex gap-2 items-center">
                         <CheckCircle className="w-4 h-4 text-accent shrink-0" />
-                        <span>Emissão de ART de Engenharia para Condomínios</span>
+                        <span>Garantia Contratual e Laudo Técnico para Condomínios</span>
                       </div>
                       <div className="flex gap-2 items-center">
                         <CheckCircle className="w-4 h-4 text-accent shrink-0" />

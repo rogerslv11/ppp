@@ -48,7 +48,7 @@ export default function Differentiators() {
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-5 mx-auto" />
           <p className="text-slate-500 text-sm sm:text-base mt-5 leading-relaxed max-w-2xl mx-auto">
-            Unimos o rigor da engenharia civil tradicional com tecnologias modernas para oferecer a melhor experiência em conservação e impermeabilização.
+            Unimos o rigor técnico tradicional com tecnologias modernas para oferecer a melhor experiência em conservação e impermeabilização.
           </p>
         </div>
 
@@ -109,7 +109,7 @@ export default function Differentiators() {
               <div>
                 <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.15em] text-cyan-400 uppercase font-mono bg-cyan-950/40 border border-cyan-800/40 px-3.5 py-1.5 rounded-full mb-6">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                  Transparência de Engenharia
+                  Transparência Técnica
                 </span>
                 <h3 className="font-display font-extrabold text-2xl sm:text-3xl tracking-tight leading-tight">
                   Quer ver um laudo de visita real da Renova?
@@ -148,7 +148,7 @@ export default function Differentiators() {
                     <h4 className="font-display font-extrabold text-xs text-slate-900 uppercase">
                       Renova
                     </h4>
-                    <p className="text-[8px] text-slate-400 font-mono tracking-wider leading-none mt-0.5">ENGENHARIA INTEGRADA</p>
+                    <p className="text-[8px] text-slate-400 font-mono tracking-wider leading-none mt-0.5">TECNOLOGIA INTEGRADA</p>
                   </div>
                   <div className="px-2 py-0.5 bg-blue-50 text-primary border border-blue-100 font-mono text-[7px] font-bold rounded">
                     LAUDO TÉCNICO

@@ -4,6 +4,7 @@ import { Check, ShieldAlert, Award, Star, BookOpen, Target, Heart, Briefcase, Qu
 import { gsap } from 'gsap';
 import { teamMembers } from '../mockData';
 import { TeamMember } from '../types';
+import assets from '../data/assets.json';
 
 interface TeamMemberCardProps {
   member: TeamMember;
@@ -190,7 +191,7 @@ export default function About() {
   const tabContent = {
     missao: {
       title: 'Nossa Missão',
-      text: 'Garantir a integridade estrutural, impermeabilização e valorização estética das piscinas e reservatórios de nossos clientes através de engenharia civil de elite, revestimentos de alto padrão e impermeabilização definitiva com fibra.',
+      text: 'Garantir a integridade estrutural, impermeabilização e valorização estética das piscinas e reservatórios de nossos clientes através de soluções técnicas de elite, revestimentos de alto padrão e impermeabilização definitiva com fibra.',
       icon: <Target className="w-6 h-6 text-primary" />,
       color: 'bg-blue-500/10 text-primary border-primary/20'
     },
@@ -202,7 +203,7 @@ export default function About() {
     },
     valores: {
       title: 'Nossos Valores',
-      text: 'Segurança de engenharia, durabilidade estendida (garantia real em contrato), transparência técnica, respeito ao meio ambiente (combate ao desperdício de água por vazamentos) e pontualidade na entrega de obras.',
+      text: 'Segurança técnica, durabilidade estendida (garantia real em contrato), transparência técnica, respeito ao meio ambiente (combate ao desperdício de água por vazamentos) e pontualidade na entrega de obras.',
       icon: <Heart className="w-6 h-6 text-emerald-500" />,
       color: 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20'
     }
@@ -230,7 +231,7 @@ export default function About() {
           <div className="lg:col-span-5 relative gsap-reveal-left">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/10 border border-slate-100">
               <img 
-                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=700&q=80" 
+                src={assets.about.technician} 
                 alt="Técnico realizando análise de água" 
                 className="w-full h-[32rem] object-cover hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
@@ -272,7 +273,7 @@ export default function About() {
             </div>
 
             <p className="text-slate-600 leading-relaxed text-base sm:text-md">
-              A <strong className="text-slate-900">Renova</strong> nasceu da solidez de mais de duas décadas de atuação na construção civil. Nos últimos 5 anos, nos tornamos referência especializada em engenharia de piscinas: reformas estruturais, impermeabilização definitiva com fibra de vidro, revitalização de superfícies e localização precisa de vazamentos em Porto Alegre e Região Metropolitana.
+              A <strong className="text-slate-900">Renova</strong> nasceu da solidez de mais de duas décadas de atuação na construção civil. Nos últimos 5 anos, nos tornamos referência especializada em reformas de piscinas: reformas estruturais, impermeabilização definitiva com fibra de vidro, revitalização de superfícies e localização precisa de vazamentos em Porto Alegre e Região Metropolitana.
             </p>
 
             {/* Interactive Pillar Selector (Tab-style) */}
@@ -393,7 +394,7 @@ export default function About() {
                       </div>
                       <h5 className="font-bold text-slate-900 mb-2">Legado em Fibra</h5>
                       <p className="text-sm text-slate-600 leading-relaxed">
-                        Aprendi as técnicas de fibra de vidro com o Sr. Raul, referência na região, unindo esse saber à minha base sólida em engenharia civil.
+                        Aprendi as técnicas de fibra de vidro com o Sr. Raul, referência na região, unindo esse saber à minha base sólida técnica na construção civil.
                       </p>
                     </div>
                     <div className="p-6 rounded-2xl bg-cyan-50/50 border border-cyan-100/50">

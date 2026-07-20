@@ -122,15 +122,15 @@ export default function Footer({ onNavClick }: FooterProps) {
             <div className="space-y-4.5 text-xs text-slate-400 font-mono">
               <div className="flex gap-2.5 items-start">
                 <MapPin className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                <span className="leading-relaxed">Av. Getúlio Vargas, 1200 - Menino Deus, Porto Alegre - RS, 90150-002</span>
+                <span className="leading-relaxed">Rua Itapetininga 178 - São Judas Tadeu, Gravataí - RS, 94075-040</span>
               </div>
               <div className="flex gap-2.5 items-start">
                 <Phone className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                <span>+55 (51) 99999-9999</span>
+                <span>+55 (51) 98573-3001</span>
               </div>
               <div className="flex gap-2.5 items-start">
                 <Mail className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                <span className="break-all">contato@renovapro.com.br</span>
+                <span className="break-all">renovapiscina1973@gmail.com</span>
               </div>
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function Footer({ onNavClick }: FooterProps) {
             </h5>
             <div className="space-y-4 text-xs text-slate-400 leading-relaxed">
               <p>
-                Operamos estritamente alinhados às normas técnicas de engenharia civil e segurança do CREA:
+                Operamos estritamente alinhados às normas técnicas e segurança do CREA:
               </p>
               <div className="space-y-2 font-mono">
                 <div className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/5 w-full flex items-center justify-between">
@@ -166,6 +166,7 @@ export default function Footer({ onNavClick }: FooterProps) {
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 text-[11px] text-slate-500 border-t border-white/2.5 pt-8">
           <div className="space-y-1 text-center sm:text-left">
             <p>&copy; {new Date().getFullYear()} Renova Ltda. Todos os direitos reservados.</p>
+            <p className="font-mono text-slate-400 text-xs mt-1">Desenvolvido por <a href="#" className="text-white font-bold hover:text-accent transition-colors text-sm ml-1">Zotti Digital</a></p>
             <p className="font-mono">CNPJ: 12.345.678/0001-90 | Insc. Estadual: 123.456.789.110</p>
           </div>
 

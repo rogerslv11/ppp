@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Calendar, Phone, ArrowRight, Shield, Award, Users } from 'lucide-react';
 import { StatItem } from '../types';
+import assets from '../data/assets.json';
 
 interface HeroProps {
   onCtaClick: (id: string) => void;
@@ -10,12 +11,8 @@ interface HeroProps {
 export default function Hero({ onCtaClick }: HeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const heroImages = [
-    'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1600&q=80', // Modern Infinity Pool
-    'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80', // Clean Pool Water Detail
-    'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80', // High-end Residential Pool
-    'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80', // Resort Style Pool
-  ];
+  const heroImages = assets.hero;
+
 
   const stats: StatItem[] = [
     { value: '20+', label: 'Anos na Construção', suffix: '' },
@@ -79,7 +76,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             <span className="text-[10px] font-bold tracking-[0.2em] text-slate-100 font-mono uppercase">
-              Engenharia e Impermeabilização de Elite
+              Especialista em Impermeabilização de Elite
             </span>
           </motion.div>
 
@@ -93,8 +90,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
             Sua Piscina Sempre <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-blue-200 to-white font-black pb-1 inline-block">
               Segura, Impermeabilizada & Linda
-            </span> <br />
-            Com Resguardo de Engenharia.
+            </span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -104,7 +100,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
             transition={{ delay: 0.3, duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
             className="mt-6 text-sm sm:text-base lg:text-lg text-slate-300 font-medium leading-relaxed max-w-2xl"
           >
-            Especialistas em reformas estruturais de piscinas, impermeabilização com fibra de vidro, correção de vazamentos graves e revitalização com engenharia e garantia contratual.
+            Especialistas em reformas estruturais de piscinas, impermeabilização com fibra de vidro, correção de vazamentos graves e revitalização especializada com garantia contratual.
           </motion.p>
 
           {/* CTAs */}
@@ -124,13 +120,13 @@ export default function Hero({ onCtaClick }: HeroProps) {
             </button>
 
             <a
-              href="https://wa.me/5551999999999?text=Ol%C3%A1%21+Gostaria+de+solicitar+um+or%C3%A7amento+de+engenharia+para+reforma+ou+impermeabiliza%C3%A7%C3%A3o+de+piscina."
+              href="https://wa.me/5551999999999?text=Ol%C3%A1%21+Gostaria+de+solicitar+um+or%C3%A7amento+especialista+para+reforma+ou+impermeabiliza%C3%A7%C3%A3o+de+piscina."
               target="_blank"
               referrerPolicy="no-referrer"
               className="flex items-center justify-center gap-2.5 px-8 py-4.5 text-xs sm:text-sm font-bold text-slate-900 bg-white hover:bg-slate-50 border border-white hover:border-slate-100 shadow-lg hover:-translate-y-0.5 active:translate-y-0 rounded-2xl transition-all duration-300 group"
             >
               <Phone className="w-5 h-5 text-emerald-500 fill-emerald-500/20 group-hover:scale-110 transition-transform" />
-              <span>Falar com Engenharia</span>
+              <span>Falar com Especialista</span>
             </a>
           </motion.div>
 

@@ -30,7 +30,7 @@ const enrichedFaqs: RichFAQItem[] = [
   },
   {
     id: 4,
-    question: 'Vocês emitem laudos de engenharia e ART (Anotação de Responsabilidade Técnica)?',
+    question: 'Vocês emitem laudos técnicos e garantia real para condomínios?',
     category: 'vazamentos',
     answer: 'Sim! Como empresa credenciada ao CREA-RS e liderada por engenheiro civil habilitado, todas as nossas reformas, impermeabilizações de piscinas e laudos de reservatórios em condomínios são acompanhados de ART (Anotação de Responsabilidade Técnica). Esse documento atesta a segurança das fundações da edificação e a conformidade com as normas ABNT.'
   },
@@ -48,7 +48,7 @@ const enrichedFaqs: RichFAQItem[] = [
   },
   {
     id: 7,
-    question: 'Quais normas técnicas a Renova adota em seus projetos de engenharia?',
+    question: 'Quais normas técnicas a Renova adota em seus projetos especializados?',
     category: 'impermeabilizacao',
     answer: 'Nossas obras e projetos seguem estritamente as diretrizes da ABNT NBR 10339 (Projeto e execução de piscinas), NBR 15575 (Desempenho de Edificações), NBR 9575 (Impermeabilização - Seleção e Projeto) e NBR 9574 (Execução de impermeabilização), assegurando alta impermeabilização e resistência estrutural.'
   }
@@ -102,11 +102,11 @@ export default function FAQ() {
             Central de Dúvidas
           </span>
           <h2 className="font-display font-extrabold text-3xl sm:text-4.5xl text-slate-900 tracking-tight mt-6 leading-none">
-            Perguntas Frequentes de Engenharia
+            Perguntas Técnicas Frequentes
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-5 mx-auto" />
           <p className="text-slate-500 text-sm sm:text-base mt-5 leading-relaxed">
-            Consulte as respostas técnicas elaboradas pela nossa equipe de engenharia sobre prazos, normas ABNT, impermeabilização em fibra e laudos com emissão de ART.
+            Consulte as respostas técnicas elaboradas pela nossa equipe de especialistas sobre prazos, normas ABNT, impermeabilização em fibra e laudos técnicos.
           </p>
         </div>
 

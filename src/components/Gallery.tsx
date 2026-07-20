@@ -9,9 +9,7 @@ import {
   ChevronLeft,
   ChevronRight,
   CheckCircle2, 
-  Gauge, 
   Award,
-  AlertCircle,
   ShieldCheck
 } from 'lucide-react';
 import { GalleryItem, BeforeAfterItem } from '../types';
@@ -35,7 +33,6 @@ export default function Gallery() {
   const sliderContainerRef = useRef<HTMLDivElement>(null);
 
   const selectedBaItem = galleryData.beforeAfterCases[currentIndex];
-  const activeSpec = selectedBaItem.technicalSpec;
 
   const nextCase = () => {
     setCurrentIndex((prev) => (prev + 1) % galleryData.beforeAfterCases.length);
@@ -237,7 +234,7 @@ export default function Gallery() {
                 <div className="bg-slate-50 p-4.5 rounded-2.5xl border border-slate-100/80 flex gap-3 text-xs text-slate-500">
                   <HelpCircle className="w-5 h-5 text-primary shrink-0 mt-0.5 animate-pulse" />
                   <p className="leading-relaxed">
-                    <strong>Arraste o comparador:</strong> Toque ou clique na barra branca no centro da imagem e arraste-a lateralmente para ver a diferença do estado antes e depois do choque de engenharia.
+                    <strong>Arraste o comparador:</strong> Toque ou clique na barra branca no centro da imagem e arraste-a lateralmente para ver a diferença do estado antes e depois da intervenção técnica.
                   </p>
                 </div>
               </div>
@@ -334,110 +331,6 @@ export default function Gallery() {
               </div>
 
             </div>
-
-            {/* Scientific recovery report - TECHNICAL SHEET */}
-            {activeSpec && (
-              <div className="bg-slate-900 text-white rounded-3.5xl p-6 sm:p-10 border border-white/5 shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-primary/10 filter blur-3xl -z-0" />
-                
-                <div className="relative z-10 space-y-6">
-                  {/* Header technical section */}
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/5 pb-5">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 text-accent flex items-center justify-center border border-white/5">
-                        <ShieldCheck className="w-5.5 h-5.5" />
-                      </div>
-                      <div>
-                        <span className="text-[10px] font-mono font-bold tracking-widest text-accent uppercase leading-none block">
-                          Ficha Técnica Oficial da Obra
-                        </span>
-                        <h4 className="font-display font-bold text-lg sm:text-xl text-white mt-1.5">
-                          Laudo de Engenharia &bull; Caso {selectedBaItem.id < 10 ? `0${selectedBaItem.id}` : selectedBaItem.id}
-                        </h4>
-                      </div>
-                    </div>
-                    <div className="px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 font-mono text-xs flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-accent" />
-                      <span>ART de Engenharia Emitida (CREA-RS)</span>
-                    </div>
-                  </div>
-
-                  {/* Quick stats details row */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/5">
-                      <span className="text-[10px] text-slate-400 font-mono uppercase block">Volume Hidráulico</span>
-                      <p className="text-base font-bold text-white mt-1">{activeSpec.volume}</p>
-                    </div>
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/5">
-                      <span className="text-[10px] text-slate-400 font-mono uppercase block">Tempo de Obra</span>
-                      <p className="text-base font-bold text-white mt-1">{activeSpec.tempo}</p>
-                    </div>
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/5">
-                      <span className="text-[10px] text-slate-400 font-mono uppercase block">Engenheiro Supervisor</span>
-                      <p className="text-base font-bold text-white mt-1 truncate">{activeSpec.responsavel.split(' (')[0]}</p>
-                    </div>
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/5">
-                      <span className="text-[10px] text-slate-400 font-mono uppercase block">Tecnologias de Obra</span>
-                      <p className="text-xs font-semibold text-slate-300 mt-1 line-clamp-2">{activeSpec.produtos}</p>
-                    </div>
-                  </div>
-
-                  {/* Diagnóstico vs Procedimento */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-                    <div className="space-y-2">
-                      <h5 className="text-xs font-bold font-mono tracking-wider text-rose-400 uppercase flex items-center gap-1.5">
-                        <AlertCircle className="w-4 h-4" />
-                        Diagnóstico de Engenharia (Antes)
-                      </h5>
-                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed bg-white/2.5 p-4 rounded-2.5xl border border-white/2.5">
-                        {activeSpec.diagnostico}
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <h5 className="text-xs font-bold font-mono tracking-wider text-emerald-400 uppercase flex items-center gap-1.5">
-                        <CheckCircle2 className="w-4 h-4" />
-                        Intervenção Técnica Executada
-                      </h5>
-                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed bg-white/2.5 p-4 rounded-2.5xl border border-white/2.5">
-                        {activeSpec.tratamento}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Parameters Comparison Table */}
-                  <div className="border-t border-white/5 pt-5">
-                    <h5 className="text-xs font-bold font-mono tracking-wider text-slate-400 uppercase mb-4 flex items-center gap-1.5">
-                      <Gauge className="w-4 h-4 text-accent" />
-                      Comparativo de Impermeabilização & Desempenho
-                    </h5>
-
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-                      {[
-                        { metric: 'Impermeabilização', antes: activeSpec.parametrosAntes.impermeabilizacao, depois: activeSpec.parametrosDepois.impermeabilizacao },
-                        { metric: 'Solo Base', antes: activeSpec.parametrosAntes.infiltracao, depois: activeSpec.parametrosDepois.infiltracao },
-                        { metric: 'Acabamento', antes: activeSpec.parametrosAntes.acabamento, depois: activeSpec.parametrosDepois.acabamento },
-                        { metric: 'Perda D\'água', antes: activeSpec.parametrosAntes.perda, depois: activeSpec.parametrosDepois.perda }
-                      ].map((m, idx) => (
-                        <div key={idx} className="bg-white/2.5 border border-white/5 rounded-2xl p-4 flex flex-col justify-between">
-                          <span className="text-xs font-bold text-slate-400 font-mono">{m.metric}</span>
-                          <div className="mt-3 space-y-1.5">
-                            <div>
-                              <span className="text-[9px] text-slate-500 block uppercase font-mono">Antes:</span>
-                              <span className="text-xs font-bold text-rose-400 leading-tight block">{m.antes}</span>
-                            </div>
-                            <div className="border-t border-white/5 pt-1.5">
-                              <span className="text-[9px] text-slate-500 block uppercase font-mono">Depois:</span>
-                              <span className="text-xs font-bold text-emerald-400 leading-tight block">{m.depois}</span>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            )}
           </div>
         )}
 
@@ -602,7 +495,7 @@ export default function Gallery() {
                 {/* Captions below */}
                 <div className="mt-5 text-center max-w-xl text-white">
                   <span className="text-[9px] font-mono tracking-widest text-accent uppercase font-bold bg-white/10 px-3 py-1 rounded-lg">
-                    {lightboxImage.category === 'reforma' ? 'Reforma de Alta Engenharia' : lightboxImage.category === 'impermeabilizacao' ? 'Impermeabilização de Longa Duração' : 'Detecção e Reparo de Vazamento'}
+                    {lightboxImage.category === 'reforma' ? 'Reforma Especializada' : lightboxImage.category === 'impermeabilizacao' ? 'Impermeabilização de Longa Duração' : 'Detecção e Reparo de Vazamento'}
                   </span>
                   <h3 className="font-display font-bold text-lg sm:text-xl text-white mt-3">
                     {lightboxImage.title}

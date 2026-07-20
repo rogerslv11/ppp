@@ -79,7 +79,7 @@ export default function Preloader() {
                 transition={{ delay: 0.6, duration: 0.5 }}
                 className="mt-2 text-xs font-mono tracking-widest text-accent uppercase"
               >
-                Reforma e Engenharia de Piscinas
+                Reforma e Especialista em Piscinas
               </motion.p>
             </div>
           </div>
