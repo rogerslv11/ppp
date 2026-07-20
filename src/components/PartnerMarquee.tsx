@@ -60,20 +60,18 @@ export default function PartnerMarquee() {
           {marqueePartners.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 flex flex-col items-center justify-center w-[200px] h-[100px] grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-500"
+              className="flex-shrink-0 flex flex-col items-center justify-center w-[260px] grayscale hover:grayscale-0 opacity-65 hover:opacity-100 transition-all duration-500"
             >
-              <img 
-                src={partner.logo} 
-                alt={partner.name}
-                className="max-w-[140px] max-h-[60px] object-contain mb-2"
-                referrerPolicy="no-referrer"
-                onError={(e) => {
-                  // Fallback for missing logos
-                  (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(partner.name)}&background=f8fafc&color=0f172a&size=128&font-size=0.33`;
-                }}
-              />
-              <span className="text-[8px] font-mono font-bold text-slate-400 uppercase tracking-widest text-center mt-1">
-                {partner.category}
+              <div className="w-full h-[180px] rounded-2xl overflow-hidden border border-slate-100 shadow-md bg-slate-50">
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <span className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest text-center mt-2.5">
+                {partner.name} — {partner.category}
               </span>
             </div>
           ))}

@@ -1,86 +1,80 @@
 [
   {
-    "id": "cyrela",
-    "name": "Cyrela",
-    "category": "Incorporadora",
-    "logo": "https://logo.clearbit.com/cyrela.com.br"
+    "id": "cliente-1",
+    "name": "Cliente Residencial",
+    "category": "Reforma Completa",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.30.jpeg"
   },
   {
-    "id": "atmosphere",
-    "name": "Atmosphere",
-    "category": "Condomínio",
-    "logo": "https://ui-avatars.com/api/?name=Atmosphere&background=f8fafc&color=0f172a&size=128&font-size=0.33"
+    "id": "cliente-2",
+    "name": "Condomínio Residencial",
+    "category": "Impermeabilização",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.30 (1).jpeg"
   },
   {
-    "id": "alianca",
-    "name": "Aliança",
-    "category": "Empreendimentos",
-    "logo": "https://logo.clearbit.com/alianca.com"
+    "id": "cliente-3",
+    "name": "Residência Alto Padrão",
+    "category": "Reforma Estrutural",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.30 (2).jpeg"
   },
   {
-    "id": "prado",
-    "name": "Prado",
-    "category": "Bairro Planejado",
-    "logo": "https://ui-avatars.com/api/?name=Prado&background=f8fafc&color=0f172a&size=128&font-size=0.33"
+    "id": "cliente-4",
+    "name": "Casa Familiar",
+    "category": "Pastilhas de Vidro",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.30 (3).jpeg"
   },
   {
-    "id": "azenha",
-    "name": "Azenha",
-    "category": "Administradora",
-    "logo": "https://logo.clearbit.com/azenha.com.br"
+    "id": "cliente-5",
+    "name": "Síndico Royal Park",
+    "category": "Detecção Vazamento",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.31.jpeg"
   },
   {
-    "id": "credito-real",
-    "name": "Crédito Real",
-    "category": "Administradora",
-    "logo": "https://logo.clearbit.com/creditoreal.com.br"
+    "id": "cliente-6",
+    "name": "Piscina Comercial",
+    "category": "Revitalização Total",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.31 (1).jpeg"
   },
   {
-    "id": "auxiliadora-predial",
-    "name": "Auxiliadora Predial",
-    "category": "Administradora",
-    "logo": "https://logo.clearbit.com/auxiliadorapredial.com.br"
+    "id": "cliente-7",
+    "name": "Hotel & Spa",
+    "category": "Impermeabilização",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.31 (2).jpeg"
   },
   {
-    "id": "bolognesi",
-    "name": "Bolognesi",
-    "category": "Engenharia",
-    "logo": "https://logo.clearbit.com/bolognesi.com.br"
+    "id": "cliente-8",
+    "name": "Condomínio Clube",
+    "category": "Liner de Fibra",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.32.jpeg"
   },
   {
-    "id": "katerra",
-    "name": "Katerra",
-    "category": "Construção Civil",
-    "logo": "https://logo.clearbit.com/katerra.com"
+    "id": "cliente-9",
+    "name": "Residência Canoas",
+    "category": "Reforma Premium",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.32 (1).jpeg"
   },
   {
-    "id": "igui",
-    "name": "iGUi",
-    "category": "Piscinas",
-    "logo": "https://logo.clearbit.com/igui.com"
+    "id": "cliente-10",
+    "name": "Edifício Corporativo",
+    "category": "Reservatório",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.32 (2).jpeg"
   },
   {
-    "id": "rimax",
-    "name": "Rimax",
-    "category": "Engenharia",
-    "logo": "https://logo.clearbit.com/rimax.com"
+    "id": "cliente-11",
+    "name": "Cobertura Rooftop",
+    "category": "Impermeabilização",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.32 (3).jpeg"
   },
   {
-    "id": "renova",
-    "name": "Renova",
-    "category": "Soluções Prediais",
-    "logo": "https://ui-avatars.com/api/?name=Renova&background=f8fafc&color=0f172a&size=128&font-size=0.33"
+    "id": "cliente-12",
+    "name": "Residencial Park",
+    "category": "Troca Revestimento",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.33.jpeg"
   },
   {
-    "id": "alphaville",
-    "name": "Alphaville",
-    "category": "Bairro Planejado",
-    "logo": "https://logo.clearbit.com/alphaville.com.br"
-  },
-  {
-    "id": "led-piscinas",
-    "name": "LED Piscinas",
-    "category": "Piscinas",
-    "logo": "https://ui-avatars.com/api/?name=LED+Piscinas&background=f8fafc&color=0f172a&size=128&font-size=0.33"
+    "id": "cliente-13",
+    "name": "Casa Gravataí",
+    "category": "Fibra de Vidro",
+    "logo": "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.33 (1).jpeg"
   }
 ]
