@@ -42,15 +42,15 @@
       }
     ],
     "portfolio": [
-      "https://images.unsplash.com/photo-1595181867384-0332cd5e19a1?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1560742124-275138ed499b?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1582266255745-9e3f9b42360c?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80"
+      "/imgs/portfolio1.jpg",
+      "/imgs/portfolio2.jpg",
+      "/imgs/portfolio3.jpg",
+      "/imgs/portfolio4.jpg",
+      "/imgs/portfolio5.jpg",
+      "/imgs/portfolio6.jpg",
+      "/imgs/portfolio7.jpg",
+      "/imgs/portfolio8.jpg",
+      "/imgs/portfolio9.jpg"
     ]
   }
 }
