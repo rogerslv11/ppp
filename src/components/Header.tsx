@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Phone } from 'lucide-react';
-import Logo from './Logo';
+import logoSrc from '../imgs/Logo.png'
 
 interface HeaderProps {
   onNavClick: (id: string) => void;
@@ -87,7 +87,7 @@ export default function Header({ onNavClick }: HeaderProps) {
             onClick={() => handleNavClickInternal('home')}
             className="cursor-pointer group"
           >
-            <Logo size="md" />
+            <img src={logoSrc} alt="Logo" className="h-10 sm:h-11 w-auto" />
           </div>
 
           {/* Desktop Navigation (Exactly 6 Links) */}
@@ -182,7 +182,7 @@ export default function Header({ onNavClick }: HeaderProps) {
             >
               <div>
                 <div className="flex items-center justify-between pb-5 border-b border-slate-100">
-                  <Logo size="sm" />
+                  <img src={logoSrc} alt="Logo" className="h-8 w-auto" />
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="w-8.5 h-8.5 flex items-center justify-center rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors"
