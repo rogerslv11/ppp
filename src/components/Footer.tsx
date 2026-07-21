@@ -30,7 +30,7 @@ export default function Footer({ onNavClick }: FooterProps) {
     { label: 'Serviços de Elite', id: 'servicos' },
     { label: 'Diferenciais', id: 'diferenciais' },
     { label: 'Como Trabalhamos', id: 'como-trabalhamos' },
-    { label: 'Antes e Depois', id: 'antes-depois' },
+    { label: 'Galeria', id: 'galeria' },
     { label: 'Depoimentos', id: 'depoimentos' },
     { label: 'FAQ', id: 'faq' },
     { label: 'Fale Conosco', id: 'contato' },
@@ -141,9 +141,6 @@ export default function Footer({ onNavClick }: FooterProps) {
               Credenciamento Técnico
             </h5>
             <div className="space-y-4 text-xs text-slate-400 leading-relaxed">
-              <p>
-                Operamos estritamente alinhados às normas técnicas e segurança do CREA:
-              </p>
               <div className="space-y-2 font-mono">
                 <div className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/5 w-full flex items-center justify-between">
                   <span>CREA-RS:</span>
@@ -154,9 +151,6 @@ export default function Footer({ onNavClick }: FooterProps) {
                   <span className="text-white font-bold">Habilitado</span>
                 </div>
               </div>
-              <p className="text-[10px] text-slate-500 leading-normal">
-                Todas as reformas e impermeabilizações seguem rigorosamente as diretrizes das normas ABNT NBR 10339 e NBR 15575.
-              </p>
             </div>
           </div>
 
@@ -173,7 +167,6 @@ export default function Footer({ onNavClick }: FooterProps) {
           {/* Certifications visual badges */}
           <div className="flex items-center gap-3 text-slate-500 font-bold font-mono text-[9px] uppercase tracking-wider">
             <span className="px-2 py-1 bg-white/5 rounded border border-white/5">Anvisa Homologado</span>
-            <span className="px-2 py-1 bg-white/5 rounded border border-white/5">ISO 9001</span>
           </div>
 
           {/* Scroll to top */}

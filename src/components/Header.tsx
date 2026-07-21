@@ -19,7 +19,7 @@ export default function Header({ onNavClick }: HeaderProps) {
     { label: 'Serviços', id: 'servicos' },
     { label: 'Diferenciais', id: 'diferenciais' },
     { label: 'Sobre Nós', id: 'sobre' },
-    { label: 'Galeria', id: 'antes-depois' },
+    { label: 'Galeria', id: 'galeria' },
     { label: 'Contato', id: 'contato' },
   ];
 

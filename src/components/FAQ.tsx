@@ -46,12 +46,6 @@ const enrichedFaqs: RichFAQItem[] = [
     category: 'reformas',
     answer: 'Para impermeabilizações gerais ou reformas estruturais, o esvaziamento é indispensável. Nossos engenheiros calculam a subpressão do lençol freático para garantir que a piscina vazia não sofra empuxo hidrostático (risco de flutuação ou trincas laterais), procedendo com ancoragens temporárias quando necessário para garantir segurança absoluta.'
   },
-  {
-    id: 7,
-    question: 'Quais normas técnicas a Renova adota em seus projetos especializados?',
-    category: 'impermeabilizacao',
-    answer: 'Nossas obras e projetos seguem estritamente as diretrizes da ABNT NBR 10339 (Projeto e execução de piscinas), NBR 15575 (Desempenho de Edificações), NBR 9575 (Impermeabilização - Seleção e Projeto) e NBR 9574 (Execução de impermeabilização), assegurando alta impermeabilização e resistência estrutural.'
-  }
 ];
 
 export default function FAQ() {

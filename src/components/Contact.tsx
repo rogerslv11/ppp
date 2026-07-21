@@ -18,14 +18,6 @@ import {
   Home,
   Waves,
   Briefcase,
-  Layers,
-  Sparkles,
-  HelpCircle,
-  Users,
-  FileText,
-  Activity,
-  Check,
-  UserCheck
 } from 'lucide-react';
 
 type TipoPiscina = 'residencial' | 'condominio' | 'clube' | 'hotel';
@@ -48,8 +40,6 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [protocol, setProtocol] = useState('');
-  const [activeTab, setActiveTab] = useState<'canais' | 'normas'>('canais');
-
   // Field Change Handler
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -445,181 +435,87 @@ export default function Contact() {
           {/* Right Column: Contacts info & Google Maps Embed */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-6 gsap-reveal-right">
             {/* Context contact card with beautiful tabs */}
-            <div className="bg-white rounded-3.5xl p-6 sm:p-8 border border-slate-100 shadow-xl shadow-blue-500/5 flex-grow flex flex-col justify-between min-h-[35rem] relative overflow-hidden">
+            <div className="bg-white rounded-3.5xl p-6 sm:p-8 border border-slate-100 shadow-xl shadow-blue-500/5 flex-grow flex flex-col justify-between relative overflow-hidden">
               {/* Decorative Blueprint Corner Accent */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-primary/5 to-transparent pointer-events-none rounded-bl-full" />
               
-              <div>
-                {/* Custom Tab Selector */}
-                <div className="flex bg-slate-50 p-1.5 rounded-2xl gap-1 mb-8 border border-slate-100">
-                  <button
-                    type="button"
-                    onClick={() => setActiveTab('canais')}
-                    className={`flex-1 py-3 text-xs font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
-                      activeTab === 'canais'
-                        ? 'bg-primary text-white shadow-md shadow-primary/10'
-                        : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50'
-                    }`}
-                  >
-                    <Phone className="w-3.5 h-3.5" />
-                    <span>Canais</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setActiveTab('normas')}
-                    className={`flex-1 py-3 text-xs font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
-                      activeTab === 'normas'
-                        ? 'bg-primary text-white shadow-md shadow-primary/10'
-                        : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50'
-                    }`}
-                  >
-                    <FileText className="w-3.5 h-3.5" />
-                    <span>Normas</span>
-                  </button>
+              <div className="space-y-6">
+                <div className="flex items-center justify-between border-b border-slate-50 pb-3">
+                  <h3 className="font-display font-bold text-slate-900 text-lg">
+                    Canais Corporativos
+                  </h3>
+                  <div className="px-2.5 py-1 bg-emerald-50 text-emerald-600 border border-emerald-100 font-mono text-[9px] font-bold rounded uppercase">
+                    Suporte Especializado
+                  </div>
                 </div>
 
-                <AnimatePresence mode="wait">
-                  {activeTab === 'canais' && (
-                    <motion.div
-                      key="canais-tab"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.25 }}
-                      className="space-y-6"
-                    >
-                      <div className="flex items-center justify-between border-b border-slate-50 pb-3">
-                        <h3 className="font-display font-bold text-slate-900 text-lg">
-                          Canais Corporativos
-                        </h3>
-                        <div className="px-2.5 py-1 bg-emerald-50 text-emerald-600 border border-emerald-100 font-mono text-[9px] font-bold rounded uppercase">
-                          Suporte Especializado
-                        </div>
-                      </div>
-
-                      <div className="space-y-5">
-                        {/* Contact phone */}
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-xl bg-blue-50/70 text-primary flex items-center justify-center shrink-0 border border-blue-50/50 shadow-sm">
-                            <Phone className="w-5 h-5" />
-                          </div>
-                          <div>
-                            <h4 className="text-[10px] font-bold font-mono text-slate-400 uppercase tracking-widest leading-none">
-                              Telefone & WhatsApp
-                            </h4>
-                            <p className="text-slate-800 font-bold text-sm sm:text-base mt-1.5 hover:text-primary transition-colors">
-                              <a href="https://wa.me/5551985733001">+55 (51) 98573-3001</a>
-                            </p>
-                            <p className="text-[10px] text-emerald-600 font-mono font-medium mt-1 flex items-center gap-1">
-                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                              Retorno médio em 5 minutos
-                            </p>
-                          </div>
-                        </div>
-
-                        {/* Contact email */}
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-xl bg-blue-50/70 text-primary flex items-center justify-center shrink-0 border border-blue-50/50 shadow-sm">
-                            <Mail className="w-5 h-5" />
-                          </div>
-                          <div>
-                            <h4 className="text-[10px] font-bold font-mono text-slate-400 uppercase tracking-widest leading-none">
-                              E-mail Corporativo
-                            </h4>
-                            <p className="text-slate-800 font-bold text-sm sm:text-base mt-1.5 hover:text-primary transition-colors">
-                              <a href="mailto:renovapiscina1973@gmail.com">renovapiscina1973@gmail.com</a>
-                            </p>
-                          </div>
-                        </div>
-
-                        {/* Operating hours */}
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-xl bg-blue-50/70 text-primary flex items-center justify-center shrink-0 border border-blue-50/50 shadow-sm">
-                            <Clock className="w-5 h-5" />
-                          </div>
-                          <div>
-                            <h4 className="text-[10px] font-bold font-mono text-slate-400 uppercase tracking-widest leading-none">
-                              Horário de Atendimento
-                            </h4>
-                            <p className="text-slate-700 text-xs sm:text-sm font-semibold mt-1.5 leading-relaxed">
-                              Segunda a Sexta: 08h às 18h <br />
-                              Sábados: 08h às 13h <span className="text-[10px] text-emerald-500 font-mono font-bold">(Plantão Técnico)</span>
-                            </p>
-                          </div>
-                        </div>
-
-                        {/* Corporate Address */}
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-xl bg-blue-50/70 text-primary flex items-center justify-center shrink-0 border border-blue-50/50 shadow-sm">
-                            <MapPin className="w-5 h-5" />
-                          </div>
-                          <div>
-                            <h4 className="text-[10px] font-bold font-mono text-slate-400 uppercase tracking-widest leading-none">
-                              Sede Operacional / Logística
-                            </h4>
-                            <p className="text-slate-700 text-xs sm:text-sm font-semibold mt-1.5 leading-relaxed font-sans">
-                              Rua Itapetininga 178 - São Judas Tadeu <br />
-                              Gravataí - RS, CEP 94075-040
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-
-                  {activeTab === 'normas' && (
-                    <motion.div
-                      key="normas-tab"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.25 }}
-                      className="space-y-4"
-                    >
-                      <div className="flex items-center justify-between border-b border-slate-50 pb-3">
-                        <h3 className="font-display font-bold text-slate-900 text-lg">
-                          Normas Técnicas Nacionais
-                        </h3>
-                        <div className="px-2 py-0.5 bg-blue-50 text-primary border border-blue-100 font-mono text-[8.5px] font-bold rounded">
-                          Rigor Técnico
-                        </div>
-                      </div>
-
-                      <p className="text-xs text-slate-500 leading-relaxed">
-                        Toda obra estrutural, teste de impermeabilização e projeto de revitalização conduzido pela <strong>Renova</strong> segue estritamente as diretrizes vigentes da ABNT:
+                <div className="space-y-5">
+                  {/* Contact phone */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50/70 text-primary flex items-center justify-center shrink-0 border border-blue-50/50 shadow-sm">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-[10px] font-bold font-mono text-slate-400 uppercase tracking-widest leading-none">
+                        Telefone & WhatsApp
+                      </h4>
+                      <p className="text-slate-800 font-bold text-sm sm:text-base mt-1.5 hover:text-primary transition-colors">
+                        <a href="https://wa.me/5551985733001">+55 (51) 98573-3001</a>
                       </p>
+                      <p className="text-[10px] text-emerald-600 font-mono font-medium mt-1 flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        Retorno médio em 5 minutos
+                      </p>
+                    </div>
+                  </div>
 
-                      <div className="space-y-3">
-                        {[
-                          {
-                            titulo: 'ABNT NBR 10339',
-                            desc: 'Projeto, execução, recirculação, filtração e segurança no uso de piscinas de uso público e residencial.'
-                          },
-                          {
-                            titulo: 'ABNT NBR 15575',
-                            desc: 'Norma de Desempenho geral de edifícios residenciais, garantindo vida útil de projeto (VUP) e resistência.'
-                          },
-                          {
-                            titulo: 'ABNT NBR 9575 & 9574',
-                            desc: 'Diretrizes exatas para projeto e execução de impermeabilização contra percolação de água sob pressão.'
-                          }
-                        ].map((norma, i) => (
-                          <div key={i} className="flex items-start gap-3 p-3 rounded-2xl bg-blue-50/15 border border-blue-500/5 hover:border-blue-500/10 transition-colors">
-                            <div className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
-                              <Check className="w-3.5 h-3.5 font-bold" />
-                            </div>
-                            <div>
-                              <h4 className="font-mono font-bold text-xs text-slate-900 leading-none">
-                                {norma.titulo}
-                              </h4>
-                              <p className="text-[10px] text-slate-500 mt-1 leading-relaxed">{norma.desc}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                  {/* Contact email */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50/70 text-primary flex items-center justify-center shrink-0 border border-blue-50/50 shadow-sm">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-[10px] font-bold font-mono text-slate-400 uppercase tracking-widest leading-none">
+                        E-mail Corporativo
+                      </h4>
+                      <p className="text-slate-800 font-bold text-sm sm:text-base mt-1.5 hover:text-primary transition-colors">
+                        <a href="mailto:renovapiscina1973@gmail.com">renovapiscina1973@gmail.com</a>
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Operating hours */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50/70 text-primary flex items-center justify-center shrink-0 border border-blue-50/50 shadow-sm">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-[10px] font-bold font-mono text-slate-400 uppercase tracking-widest leading-none">
+                        Horário de Atendimento
+                      </h4>
+                      <p className="text-slate-700 text-xs sm:text-sm font-semibold mt-1.5 leading-relaxed">
+                        Segunda a Sexta: 08h às 18h <br />
+                        Sábados: 08h às 13h <span className="text-[10px] text-emerald-500 font-mono font-bold">(Plantão Técnico)</span>
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Corporate Address */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50/70 text-primary flex items-center justify-center shrink-0 border border-blue-50/50 shadow-sm">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-[10px] font-bold font-mono text-slate-400 uppercase tracking-widest leading-none">
+                        Sede Operacional / Logística
+                      </h4>
+                      <p className="text-slate-700 text-xs sm:text-sm font-semibold mt-1.5 leading-relaxed font-sans">
+                        Rua Itapetininga 178 - São Judas Tadeu <br />
+                        Gravataí - RS, CEP 94075-040
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Social icons & bottom brand */}

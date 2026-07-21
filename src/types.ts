@@ -30,25 +30,6 @@ export interface GalleryItem {
   caption: string;
 }
 
-export interface BeforeAfterItem {
-  id: number;
-  title: string;
-  subtitle?: string;
-  beforeImage: string;
-  afterImage: string;
-  description: string;
-  technicalSpec?: {
-    volume: string;
-    tempo: string;
-    diagnostico: string;
-    tratamento: string;
-    produtos: string;
-    responsavel: string;
-    parametrosAntes: Record<string, string>;
-    parametrosDepois: Record<string, string>;
-  };
-}
-
 export interface StatItem {
   value: string;
   label: string;

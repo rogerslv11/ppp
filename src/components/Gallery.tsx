@@ -1,48 +1,23 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Layers, 
-  Image as ImageIcon, 
   Eye, 
   X, 
-  HelpCircle, 
   ChevronLeft,
   ChevronRight,
-  CheckCircle2, 
   Award,
-  ShieldCheck
 } from 'lucide-react';
-import { GalleryItem, BeforeAfterItem } from '../types';
+import { GalleryItem } from '../types';
 import galleryDataRaw from '../data/gallery.json';
 
 const galleryData = galleryDataRaw as {
-  beforeAfterCases: BeforeAfterItem[];
   portfolioItems: GalleryItem[];
 };
 
 export default function Gallery() {
-  const [activeTab, setActiveTab] = useState<'antes-depois' | 'portfolio'>('antes-depois');
   const [galleryFilter, setGalleryFilter] = useState<'todos' | 'reforma' | 'impermeabilizacao' | 'vazamento'>('todos');
   const [lightboxImage, setLightboxImage] = useState<GalleryItem | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-
-  // Before/After Slider States
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [sliderPosition, setSliderPosition] = useState(50); // percentage (0 - 100)
-  const isDragging = useRef(false);
-  const sliderContainerRef = useRef<HTMLDivElement>(null);
-
-  const selectedBaItem = galleryData.beforeAfterCases[currentIndex];
-
-  const nextCase = () => {
-    setCurrentIndex((prev) => (prev + 1) % galleryData.beforeAfterCases.length);
-    setSliderPosition(50);
-  };
-
-  const prevCase = () => {
-    setCurrentIndex((prev) => (prev - 1 + galleryData.beforeAfterCases.length) % galleryData.beforeAfterCases.length);
-    setSliderPosition(50);
-  };
 
   const nextLightboxImage = () => {
     if (!lightboxImage) return;
@@ -54,74 +29,12 @@ export default function Gallery() {
     setLightboxIndex((prev) => (prev - 1 + lightboxImage.images.length) % lightboxImage.images.length);
   };
 
-  // Drag handlers for the Before/After comparison bar
-  const handleMove = (clientX: number) => {
-    if (!sliderContainerRef.current) return;
-    const rect = sliderContainerRef.current.getBoundingClientRect();
-    const x = clientX - rect.left;
-    let percentage = (x / rect.width) * 100;
-    if (percentage < 0) percentage = 0;
-    if (percentage > 100) percentage = 100;
-    setSliderPosition(percentage);
-  };
-
-  const handleTouchMove = (e: TouchEvent) => {
-    if (!isDragging.current) return;
-    handleMove(e.touches[0].clientX);
-  };
-
-  const handleMouseMove = (e: MouseEvent) => {
-    if (!isDragging.current) return;
-    handleMove(e.clientX);
-  };
-
-  const handleMouseUp = () => {
-    isDragging.current = false;
-  };
-
-  useEffect(() => {
-    const handleWindowMouseMove = (e: MouseEvent) => {
-      if (isDragging.current) handleMove(e.clientX);
-    };
-
-    const handleWindowTouchMove = (e: TouchEvent) => {
-      if (isDragging.current) handleMove(e.touches[0].clientX);
-    };
-
-    window.addEventListener('mouseup', handleMouseUp);
-    window.addEventListener('touchend', handleMouseUp);
-    window.addEventListener('mousemove', handleWindowMouseMove);
-    window.addEventListener('touchmove', handleWindowTouchMove, { passive: true });
-
-    return () => {
-      window.removeEventListener('mouseup', handleMouseUp);
-      window.removeEventListener('touchend', handleMouseUp);
-      window.removeEventListener('mousemove', handleWindowMouseMove);
-      window.removeEventListener('touchmove', handleWindowTouchMove);
-    };
-  }, []);
-
-  // Filter gallery items
   const filteredGallery = galleryFilter === 'todos'
     ? galleryData.portfolioItems
     : galleryData.portfolioItems.filter(item => item.category === galleryFilter);
 
-  // Before/After visual effect filters based on which item is chosen
-  const getBeforeFilterStyles = (id: number) => {
-    if (id === 1) {
-      // Dirty cracked tile look
-      return { filter: 'saturate(0.5) brightness(0.6) contrast(1.2) sepia(0.2) blur(0.5px)' };
-    }
-    if (id === 2) {
-      // Osmosis, chalky bubbles and faded fiberglass look
-      return { filter: 'saturate(0.4) brightness(0.8) contrast(0.7) sepia(0.1)' };
-    }
-    return { filter: 'saturate(0.6) brightness(0.7) contrast(1.1)' };
-  };
-
   return (
-    <section id="antes-depois" className="py-24 sm:py-32 bg-white relative overflow-hidden">
-      {/* Blueprint grid background */}
+    <section id="galeria" className="py-24 sm:py-32 bg-white relative overflow-hidden">
       <div 
         className="absolute inset-0 opacity-[0.025] pointer-events-none" 
         style={{ 
@@ -134,302 +47,110 @@ export default function Gallery() {
         }} 
       />
 
-      {/* Decorative Blur Background Bubbles */}
       <div className="absolute top-1/4 -right-40 w-[400px] h-[400px] bg-blue-100/20 rounded-full filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -left-40 w-[450px] h-[450px] bg-cyan-100/25 rounded-full filter blur-3xl pointer-events-none" />
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase font-mono px-3.5 py-1.5 bg-blue-50 border border-blue-100 rounded-full inline-flex items-center gap-1.5">
             <Award className="w-3.5 h-3.5" />
             Casos de Sucesso
           </span>
           <h2 className="font-display font-extrabold text-3xl sm:text-4.5xl text-slate-900 tracking-tight mt-6 leading-none">
-            Laudos de Obra & Casos Reais
+            Galeria de Serviços
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-5 mx-auto" />
-          
-          {/* Main Category Selector */}
-          <div className="mt-8 flex items-center justify-center gap-2 p-1.5 bg-slate-100 border border-slate-200/60 rounded-2xl max-w-sm mx-auto shadow-sm">
-            <button
-              onClick={() => setActiveTab('antes-depois')}
-              className={`flex-1 py-3 text-xs sm:text-sm font-bold rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer ${
-                activeTab === 'antes-depois'
-                  ? 'bg-white text-primary shadow-md border border-slate-100'
-                  : 'text-slate-500 hover:text-slate-850 hover:bg-white/40'
-              }`}
-            >
-              <Layers className="w-4 h-4" />
-              <span>Antes e Depois</span>
-            </button>
-            <button
-              onClick={() => setActiveTab('portfolio')}
-              className={`flex-1 py-3 text-xs sm:text-sm font-bold rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer ${
-                activeTab === 'portfolio'
-                  ? 'bg-white text-primary shadow-md border border-slate-100'
-                  : 'text-slate-500 hover:text-slate-850 hover:bg-white/40'
-              }`}
-            >
-              <ImageIcon className="w-4 h-4" />
-              <span>Galeria de Serviços</span>
-            </button>
+        </div>
+
+        <div>
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-10 sm:mb-12">
+            {[
+              { id: 'todos', label: 'Ver Todos' },
+              { id: 'reforma', label: 'Reformas' },
+              { id: 'impermeabilizacao', label: 'Impermeabilização' },
+              { id: 'vazamento', label: 'Vazamentos & Hidráulica' }
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setGalleryFilter(tab.id as any)}
+                className={`px-4 py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all cursor-pointer ${
+                  galleryFilter === tab.id
+                    ? 'bg-primary text-white shadow-md shadow-primary/15'
+                    : 'bg-slate-50 text-slate-500 hover:bg-slate-100'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <AnimatePresence mode="popLayout">
+              {filteredGallery.map((item) => (
+                <motion.div
+                  key={item.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                  onClick={() => {
+                    setLightboxImage(item);
+                    setLightboxIndex(0);
+                  }}
+                  className="group bg-slate-50/40 rounded-3.5xl p-4 border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="relative h-64 sm:h-72 rounded-2.5xl overflow-hidden mb-4 bg-slate-100">
+                      <img 
+                        src={item.images[0]} 
+                        alt={item.title} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                      />
+                      <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <div className="w-11 h-11 rounded-full bg-white text-primary flex items-center justify-center shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all">
+                          <Eye className="w-5.5 h-5.5" />
+                        </div>
+                      </div>
+                      
+                      <span className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-slate-900/85 text-white text-[10px] font-mono tracking-widest uppercase backdrop-blur-md">
+                        {item.category === 'reforma' ? 'Reforma' : item.category === 'impermeabilizacao' ? 'Impermeabilização' : 'Vazamento'}
+                      </span>
+                    </div>
+
+                    <h4 className="font-display font-bold text-slate-800 text-sm px-1 mt-1">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs text-slate-500 mt-1 px-1 line-clamp-2 leading-relaxed">
+                      {item.caption}
+                    </p>
+                  </div>
+
+                  <div className="mt-4 pt-3 border-t border-slate-100 px-1 flex items-center justify-between text-[10px] text-slate-400 font-mono">
+                    <span>Ref: PC-0{item.id}</span>
+                    <div className="flex items-center gap-1.5">
+                      <div className="flex -space-x-1">
+                        {item.images.slice(0, 3).map((img, i) => (
+                          <div key={i} className="w-5 h-5 rounded-full border border-white overflow-hidden bg-slate-100">
+                            <img src={img} className="w-full h-full object-cover" />
+                          </div>
+                        ))}
+                      </div>
+                      <span className="text-primary font-bold">+{item.images.length} fotos</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
         </div>
 
-        {/* --- BEFORE/AFTER SLIDER INTERACTIVE PANEL --- */}
-        {activeTab === 'antes-depois' && (
-          <div className="space-y-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-              
-              {/* Left selector menu */}
-              <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
-                <div className="space-y-4">
-                  <div>
-                    <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
-                      Casos de Patologia Física
-                    </span>
-                    <h3 className="font-display font-bold text-xl text-slate-900 mt-1">
-                      Recuperações Estruturais
-                    </h3>
-                  </div>
-
-                  <div className="flex flex-row lg:flex-col gap-3 overflow-x-auto pb-2 lg:pb-0 scrollbar-none">
-                    {galleryData.beforeAfterCases.map((item, idx) => (
-                      <button
-                        key={item.id}
-                        onClick={() => {
-                          setCurrentIndex(idx);
-                          setSliderPosition(50); // reset slider
-                        }}
-                        className={`text-left p-4.5 rounded-2xl border transition-all cursor-pointer min-w-[250px] lg:w-full shrink-0 flex flex-col gap-1.5 ${
-                          currentIndex === idx
-                            ? 'bg-blue-50/40 border-primary/25 shadow-sm'
-                            : 'bg-white border-slate-100 hover:bg-slate-50/80'
-                        }`}
-                      >
-                        <div className="flex items-center justify-between">
-                          <span className={`text-[9px] font-mono font-bold px-2 py-0.5 rounded ${
-                            currentIndex === idx ? 'bg-primary text-white' : 'bg-slate-100 text-slate-500'
-                          }`}>
-                            CASO {item.id}
-                          </span>
-                          <span className="text-[10px] text-slate-400 font-mono font-bold">
-                            {item.subtitle}
-                          </span>
-                        </div>
-                        <h4 className="font-display font-bold text-slate-800 text-sm">
-                          {item.title}
-                        </h4>
-                        <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
-                          {item.description}
-                        </p>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Micro guidelines box */}
-                <div className="bg-slate-50 p-4.5 rounded-2.5xl border border-slate-100/80 flex gap-3 text-xs text-slate-500">
-                  <HelpCircle className="w-5 h-5 text-primary shrink-0 mt-0.5 animate-pulse" />
-                  <p className="leading-relaxed">
-                    <strong>Arraste o comparador:</strong> Toque ou clique na barra branca no centro da imagem e arraste-a lateralmente para ver a diferença do estado antes e depois da intervenção técnica.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right comparison stage */}
-              <div className="lg:col-span-8 flex flex-col group/slider relative">
-                {/* Navigation arrows */}
-                <button 
-                  onClick={prevCase}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 text-primary flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-all opacity-0 group-hover/slider:opacity-100 -translate-x-4 group-hover/slider:translate-x-0 cursor-pointer"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button 
-                  onClick={nextCase}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 text-primary flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-all opacity-0 group-hover/slider:opacity-100 translate-x-4 group-hover/slider:translate-x-0 cursor-pointer"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-
-                <div 
-                  ref={sliderContainerRef}
-                  onClick={(e) => handleMove(e.clientX)}
-                  className="relative w-full h-[24rem] sm:h-[30rem] rounded-3.5xl overflow-hidden select-none cursor-ew-resize border border-slate-100 shadow-2xl shadow-blue-500/5 bg-slate-100"
-                >
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentIndex}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className="absolute inset-0"
-                    >
-                      {/* AFTER STATE IMAGE (Background) */}
-                      <img 
-                        src={selectedBaItem.afterImage} 
-                        alt="Depois Tratamento" 
-                        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                      />
-                      
-                      {/* AFTER BADGE */}
-                      <div className="absolute right-4 bottom-4 z-20 px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md text-emerald-400 font-mono text-[10px] uppercase font-bold tracking-wider border border-white/5 flex items-center gap-1.5">
-                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                        Depois (Concluído & Impermeabilizada)
-                      </div>
-
-                      {/* BEFORE STATE IMAGE (Clip Path Overlay) */}
-                      <div 
-                        className="absolute inset-0 w-full h-full overflow-hidden"
-                        style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
-                      >
-                        <img 
-                          src={selectedBaItem.beforeImage} 
-                          alt="Antes Tratamento" 
-                          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                          style={getBeforeFilterStyles(selectedBaItem.id)}
-                        />
-                        {/* BEFORE BADGE */}
-                        <div className="absolute left-4 bottom-4 z-20 px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md text-rose-400 font-mono text-[10px] uppercase font-bold tracking-wider border border-white/5 flex items-center gap-1.5">
-                          <span className="w-2 h-2 rounded-full bg-rose-400" />
-                          Antes (Vazamentos / Degradado)
-                        </div>
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
-
-                  {/* SLIDER CONTROLLER HANDLE */}
-                  <div 
-                    className="absolute top-0 bottom-0 w-1.5 bg-white cursor-ew-resize z-30 shadow-[0_0_15px_rgba(255,255,255,0.5)]"
-                    style={{ left: `${sliderPosition}%` }}
-                    onMouseDown={(e) => {
-                      e.preventDefault();
-                      isDragging.current = true;
-                    }}
-                    onTouchStart={(e) => {
-                      isDragging.current = true;
-                    }}
-                  >
-                    {/* Handle Ring */}
-                    <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-white text-primary flex items-center justify-center shadow-2xl border-2 border-primary z-40 active:scale-90 transition-transform">
-                      <div className="flex gap-1 items-center">
-                        <span className="text-[10px] font-bold tracking-tighter select-none pointer-events-none text-primary">&larr;</span>
-                        <span className="text-[10px] font-bold tracking-tighter select-none pointer-events-none text-primary">&rarr;</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Description under slider */}
-                <p className="mt-4 text-center text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
-                  {selectedBaItem.description}
-                </p>
-              </div>
-
-            </div>
-          </div>
-        )}
-
-        {/* --- DYNAMIC MASONRY PORTFOLIO GALLERY --- */}
-        {activeTab === 'portfolio' && (
-          <div>
-            {/* Gallery Category Tabs */}
-            <div className="flex flex-wrap items-center justify-center gap-2 mb-10 sm:mb-12">
-              {[
-                { id: 'todos', label: 'Ver Todos' },
-                { id: 'reforma', label: 'Reformas' },
-                { id: 'impermeabilizacao', label: 'Impermeabilização' },
-                { id: 'vazamento', label: 'Vazamentos & Hidráulica' }
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setGalleryFilter(tab.id as any)}
-                  className={`px-4 py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all cursor-pointer ${
-                    galleryFilter === tab.id
-                      ? 'bg-primary text-white shadow-md shadow-primary/15'
-                      : 'bg-slate-50 text-slate-500 hover:bg-slate-100'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Gallery Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              <AnimatePresence mode="popLayout">
-                {filteredGallery.map((item) => (
-                  <motion.div
-                    key={item.id}
-                    layout
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                    onClick={() => {
-                      setLightboxImage(item);
-                      setLightboxIndex(0);
-                    }}
-                    className="group bg-slate-50/40 rounded-3.5xl p-4 border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="relative h-64 sm:h-72 rounded-2.5xl overflow-hidden mb-4 bg-slate-100">
-                        <img 
-                          src={item.images[0]} 
-                          alt={item.title} 
-                          className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
-                        />
-                        <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                          <div className="w-11 h-11 rounded-full bg-white text-primary flex items-center justify-center shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all">
-                            <Eye className="w-5.5 h-5.5" />
-                          </div>
-                        </div>
-                        
-                        {/* Category Pill Tag */}
-                        <span className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-slate-900/85 text-white text-[10px] font-mono tracking-widest uppercase backdrop-blur-md">
-                          {item.category === 'reforma' ? 'Reforma' : item.category === 'impermeabilizacao' ? 'Impermeabilização' : 'Vazamento'}
-                        </span>
-                      </div>
-
-                      <h4 className="font-display font-bold text-slate-800 text-sm px-1 mt-1">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs text-slate-500 mt-1 px-1 line-clamp-2 leading-relaxed">
-                        {item.caption}
-                      </p>
-                    </div>
-
-                    <div className="mt-4 pt-3 border-t border-slate-100 px-1 flex items-center justify-between text-[10px] text-slate-400 font-mono">
-                      <span>Ref: PC-0{item.id}</span>
-                      <div className="flex items-center gap-1.5">
-                        <div className="flex -space-x-1">
-                          {item.images.slice(0, 3).map((img, i) => (
-                            <div key={i} className="w-5 h-5 rounded-full border border-white overflow-hidden bg-slate-100">
-                              <img src={img} className="w-full h-full object-cover" />
-                            </div>
-                          ))}
-                        </div>
-                        <span className="text-primary font-bold">+{item.images.length} fotos</span>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
-          </div>
-        )}
-
       </div>
 
-      {/* --- LIGHTBOX MODAL DIALOG --- */}
       <AnimatePresence>
         {lightboxImage && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.9 }}
@@ -438,7 +159,6 @@ export default function Gallery() {
               className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md"
             />
 
-            {/* Image viewport container */}
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -460,7 +180,6 @@ export default function Gallery() {
                     />
                   </AnimatePresence>
 
-                  {/* Navigation arrows for lightbox */}
                   {lightboxImage.images.length > 1 && (
                     <>
                       <button 
@@ -476,14 +195,12 @@ export default function Gallery() {
                         <ChevronRight className="w-6 h-6" />
                       </button>
                       
-                      {/* Image counter */}
                       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-black/50 backdrop-blur-sm rounded-full text-[10px] font-mono text-white/80">
                         {lightboxIndex + 1} / {lightboxImage.images.length}
                       </div>
                     </>
                   )}
 
-                  {/* Close floating button */}
                   <button
                     onClick={() => setLightboxImage(null)}
                     className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95 z-50"
@@ -492,7 +209,6 @@ export default function Gallery() {
                   </button>
                 </div>
 
-                {/* Captions below */}
                 <div className="mt-5 text-center max-w-xl text-white">
                   <span className="text-[9px] font-mono tracking-widest text-accent uppercase font-bold bg-white/10 px-3 py-1 rounded-lg">
                     {lightboxImage.category === 'reforma' ? 'Reforma Especializada' : lightboxImage.category === 'impermeabilizacao' ? 'Impermeabilização de Longa Duração' : 'Detecção e Reparo de Vazamento'}

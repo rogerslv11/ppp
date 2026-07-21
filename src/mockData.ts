@@ -1,4 +1,4 @@
-import { Service, Testimonial, FAQItem, GalleryItem, BeforeAfterItem, Differentiator, TeamMember } from './types';
+import { Service, Testimonial, FAQItem, GalleryItem, Differentiator, TeamMember } from './types';
 import assets from './data/assets.json';
 
 export const servicesData: Service[] = [
@@ -7,7 +7,7 @@ export const servicesData: Service[] = [
     title: 'Reformas de Piscinas',
     description: 'Transformação estrutural e estética de piscinas de concreto, alvenaria ou fibra.',
     detail: 'Realizamos reformas estruturais completas para modernizar sua piscina. Desde a alteração de profundidade e formato, até a instalação de novas prainhas, spas integrados, escadas de alvenaria e sistemas de borda infinita, garantindo engenharia robusta e acabamento impecável.',
-    iconName: 'Sparkles',
+    iconName: 'Building2',
     image: assets.services.reformas
   },
   {
@@ -15,7 +15,7 @@ export const servicesData: Service[] = [
     title: 'Revitalização de Piscinas',
     description: 'Restauração completa da estética, brilho e sistemas de piscinas desgastadas pelo tempo.',
     detail: 'Tratamento intensivo para recuperar piscinas antigas ou desbotadas. Inclui polimento técnico avançado e pintura em gel-coat premium para piscinas de fibra, substituição de rejuntes desgastados, remoção de manchas químicas de calcificação e restauração de pedras de borda.',
-    iconName: 'Droplet',
+    iconName: 'WandSparkles',
     image: assets.services.revitalizacao
   },
   {
@@ -23,7 +23,7 @@ export const servicesData: Service[] = [
     title: 'Impermeabilização com Fibra',
     description: 'Liner contínuo de fibra de vidro de alta durabilidade para impermeabilização definitiva.',
     detail: 'O método mais eficaz e duradouro do mercado para eliminar infiltrações. Aplicamos uma barreira física contínua de resina estrutural e fibra de vidro (laminação técnica) sobre piscinas de alvenaria, concreto ou reservatórios, criando uma superfície 100% impermeável e fácil de limpar.',
-    iconName: 'Trash2',
+    iconName: 'Shield',
     image: assets.services.impermeabilizacao
   },
   {
@@ -31,7 +31,7 @@ export const servicesData: Service[] = [
     title: 'Correção de Vazamentos',
     description: 'Detecção precisa e reparo definitivo de infiltrações e perdas de água na estrutura.',
     detail: 'Diagnóstico técnico especializado em patologias hidráulicas e estruturais. Localizamos e sanamos vazamentos em tubulações de retorno, aspiração ou ralo de fundo, além de trincas estruturais na alvenaria, eliminando o desperdício de água e protegendo as fundações da sua casa.',
-    iconName: 'TrendingUp',
+    iconName: 'Drill',
     image: assets.services.vazamentos
   },
   {
@@ -39,7 +39,7 @@ export const servicesData: Service[] = [
     title: 'Recuperação Estrutural',
     description: 'Tratamento de trincas, rachaduras e recomposição do concreto armado comprometido.',
     detail: 'Intervenções de engenharia civil especializadas para salvar piscinas e reservatórios com danos graves. Realizamos o tratamento de ferragens expostas e oxidadas, injeção técnica de poliuretano em fissuras ativas e recomposição volumétrica com argamassa estrutural de alta resistência.',
-    iconName: 'RefreshCw',
+    iconName: 'BrickWall',
     image: assets.services.recuperacao
   },
   {
@@ -47,7 +47,7 @@ export const servicesData: Service[] = [
     title: 'Reformas de Reservatórios',
     description: 'Manutenção, impermeabilização e adequação técnica de grandes reservatórios e cisternas.',
     detail: 'Serviço especializado para condomínios, indústrias e residências. Reformamos e impermeabilizamos reservatórios elevados e subterrâneos de água potável utilizando produtos atóxicos homologados pela ANVISA, garantindo impermeabilização total e potabilidade da água armazenada.',
-    iconName: 'ShieldCheck',
+    iconName: 'Container',
     image: assets.services.revitalizacao
   },
   {
@@ -55,7 +55,7 @@ export const servicesData: Service[] = [
     title: 'Instalações Hidráulicas',
     description: 'Redes de tubulação de alta pressão, redimensionamento de bombas e novos filtros.',
     detail: 'Substituição completa ou parcial da rede hidráulica da piscina e casa de máquinas. Projetamos e instalamos conjuntos moto-bomba eficientes, filtros de alta vazão, sistemas de aquecimento solar ou trocador de calor, e redes elétricas de comando automatizadas com proteção total.',
-    iconName: 'Settings',
+    iconName: 'Gauge',
     image: assets.services.hidraulica
   },
   {
@@ -63,25 +63,8 @@ export const servicesData: Service[] = [
     title: 'Revestimentos e Decks',
     description: 'Aplicação de pastilhas, cerâmicas, vinil premium e construção de decks de madeira nobres.',
     detail: 'Estética de alto padrão para sua área externa. Assentamento especializado de pastilhas cerâmicas e de vidro, aplicação de vinil reforçado e construção de decks de madeira de lei tratada (como Ipê e Cumaru) com acabamento naval impermeável e design ergonômico personalizado.',
-    iconName: 'Cpu',
+    iconName: 'Layers',
     image: assets.services.revestimentos
-  }
-];
-
-export const beforeAfterData: BeforeAfterItem[] = [
-  {
-    id: 1,
-    title: 'Recuperação de Piscina com Vazamento Severo',
-    beforeImage: assets.services.reformas,
-    afterImage: assets.services.reformas,
-    description: 'Reforma integral de piscina de alvenaria antiga com vazamento de mais de 3.000 litros por dia. Recuperada estruturalmente e impermeabilizada definitivamente com revestimento de fibra de vidro em apenas 5 dias de obra.'
-  },
-  {
-    id: 2,
-    title: 'Revitalização Estética & Troca de Revestimento',
-    beforeImage: assets.services.impermeabilizacao,
-    afterImage: assets.services.impermeabilizacao,
-    description: 'Transformação de piscina de fibra severamente desbotada, manchada e com bolhas. Foi realizada a remoção de osmose, reforço estrutural de laminação e nova pintura em gel-coat azul piscina com polimento espelhado.'
   }
 ];
 
