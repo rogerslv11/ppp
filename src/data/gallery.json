@@ -2,94 +2,79 @@
   "portfolioItems": [
     {
       "id": 1,
-      "title": "Impermeabilização em Mansão",
       "category": "impermeabilizacao",
       "images": [
         "/imgs/serviços/1/WhatsApp Image 2026-07-20 at 17.59.38.jpeg",
         "/imgs/serviços/1/WhatsApp Image 2026-07-20 at 17.59.43.jpeg",
         "/imgs/serviços/1/WhatsApp Image 2026-07-20 at 17.59.51.jpeg",
         "/imgs/serviços/1/WhatsApp Image 2026-07-20 at 17.59.57.jpeg",
+        "/imgs/serviços/1/WhatsApp Image 2026-07-20 at 18.00.02.jpeg",
         "/imgs/serviços/1/WhatsApp Image 2026-07-20 at 18.00.07.jpeg",
         "/imgs/serviços/1/WhatsApp Image 2026-07-20 at 18.00.11.jpeg"
-
-       
-      ],
-      "caption": "Impermeabilização com fibra de vidro em piscina de alto padrão, eliminando infiltrações de forma definitiva."
+      ]
     },
     {
       "id": 2,
-      "title": "Reforma Residencial Premium",
       "category": "reforma",
       "images": [
-        "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.30 (2).jpeg",
-        "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.30 (3).jpeg"
-      ],
-      "caption": "Transformação completa do revestimento com pastilhas de vidro e nova iluminação LED subaquática."
+        "/imgs/serviços/2/WhatsApp Image 2026-07-21 at 14.11.13.jpeg",
+        "/imgs/serviços/2/WhatsApp Image 2026-07-21 at 14.11.13 (1).jpeg",
+        "/imgs/serviços/2/WhatsApp Image 2026-07-21 at 14.11.13 (2).jpeg",
+        "/imgs/serviços/2/WhatsApp Image 2026-07-21 at 14.11.13 (3).jpeg",
+        "/imgs/serviços/2/WhatsApp Image 2026-07-21 at 14.11.14 (1).jpeg",
+        "/imgs/serviços/2/WhatsApp Image 2026-07-21 at 14.11.14 (2).jpeg",
+        "/imgs/serviços/2/WhatsApp Image 2026-07-21 at 14.11.14 (3).jpeg",
+        "/imgs/serviços/2/WhatsApp Image 2026-07-21 at 14.11.14 (4).jpeg"
+      ]
     },
     {
       "id": 3,
-      "title": "Detecção e Reparo de Fissura",
       "category": "vazamento",
       "images": [
-        "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.31.jpeg",
-        "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.31 (1).jpeg"
-      ],
-      "caption": "Diagnóstico pneumático e correção cirúrgica de fissura estrutural com injeção de poliuretano."
+        "/imgs/serviços/3/WhatsApp Image 2026-07-21 at 14.23.08.jpeg",
+        "/imgs/serviços/3/WhatsApp Image 2026-07-21 at 14.23.08 (1).jpeg",
+        "/imgs/serviços/3/WhatsApp Image 2026-07-21 at 14.23.09.jpeg",
+        "/imgs/serviços/3/WhatsApp Image 2026-07-21 at 14.23.09 (1).jpeg",
+        "/imgs/serviços/3/WhatsApp Image 2026-07-21 at 14.23.09 (2).jpeg",
+        "/imgs/serviços/3/WhatsApp Image 2026-07-21 at 14.23.09 (3).jpeg",
+        "/imgs/serviços/3/WhatsApp Image 2026-07-21 at 14.23.10.jpeg",
+        "/imgs/serviços/3/WhatsApp Image 2026-07-21 at 14.23.10 (1).jpeg",
+        "/imgs/serviços/3/WhatsApp Image 2026-07-21 at 14.23.10 (2).jpeg"
+      ]
     },
     {
       "id": 4,
-      "title": "Piscina Comercial Olímpica",
       "category": "impermeabilizacao",
       "images": [
-        "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.31 (2).jpeg",
-        "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.32.jpeg"
-      ],
-      "caption": "Impermeabilização de grande porte com liner contínuo de fibra em centro esportivo."
+        "/imgs/serviços/4/WhatsApp Image 2026-07-21 at 17.31.17.jpeg",
+        "/imgs/serviços/4/WhatsApp Image 2026-07-21 at 17.31.18.jpeg",
+        "/imgs/serviços/4/WhatsApp Image 2026-07-21 at 17.31.18 (1).jpeg",
+        "/imgs/serviços/4/WhatsApp Image 2026-07-21 at 17.31.18 (2).jpeg",
+        "/imgs/serviços/4/WhatsApp Image 2026-07-21 at 17.31.18 (3).jpeg",
+        "/imgs/serviços/4/WhatsApp Image 2026-07-21 at 17.31.19.jpeg",
+        "/imgs/serviços/4/WhatsApp Image 2026-07-21 at 17.31.19 (1).jpeg"
+      ]
     },
     {
       "id": 5,
-      "title": "Design Moderno & Deck",
       "category": "reforma",
       "images": [
-        "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.32 (1).jpeg"
-      ],
-      "caption": "Deck de madeira de lei e acabamento premium em piscina revitalizada."
+        "/imgs/serviços/5/WhatsApp Image 2026-07-21 at 17.35.52.jpeg",
+        "/imgs/serviços/5/WhatsApp Image 2026-07-21 at 17.35.52 (1).jpeg",
+        "/imgs/serviços/5/WhatsApp Image 2026-07-21 at 17.35.52 (2).jpeg",
+        "/imgs/serviços/5/WhatsApp Image 2026-07-21 at 17.35.52 (3).jpeg",
+        "/imgs/serviços/5/WhatsApp Image 2026-07-21 at 17.35.53.jpeg",
+        "/imgs/serviços/5/WhatsApp Image 2026-07-21 at 17.35.53 (1).jpeg",
+        "/imgs/serviços/5/WhatsApp Image 2026-07-21 at 17.35.53 (2).jpeg"
+      ]
     },
     {
       "id": 6,
-      "title": "Revisão Preventiva Técnica",
       "category": "vazamento",
       "images": [
-        "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.32 (2).jpeg"
-      ],
-      "caption": "Inspeção técnica completa com substituição de filtros e bombas para prevenir infiltrações."
-    },
-    {
-      "id": 7,
-      "title": "Impermeabilização em Rooftop",
-      "category": "impermeabilizacao",
-      "images": [
-        "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.32 (3).jpeg"
-      ],
-      "caption": "Impermeabilização de piscina suspensa em cobertura com fibra de vidro e garantia contratual."
-    },
-    {
-      "id": 8,
-      "title": "Retrofit de Iluminação LED",
-      "category": "reforma",
-      "images": [
-        "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.33.jpeg"
-      ],
-      "caption": "Modernização completa com sistema LED RGB, painel de comando e nova pintura gel-coat."
-    },
-    {
-      "id": 9,
-      "title": "Selagem de Tubulações",
-      "category": "vazamento",
-      "images": [
-        "/imgs/clientes/WhatsApp Image 2026-07-15 at 17.23.33 (1).jpeg"
-      ],
-      "caption": "Reparo de infiltrações em conexões hidráulicas com resinas expansivas de alta performance."
+        "/imgs/serviços/6/WhatsApp Image 2026-07-21 at 17.27.41.jpeg",
+        "/imgs/serviços/6/WhatsApp Image 2026-07-21 at 17.27.41 (1).jpeg"
+      ]
     }
   ]
 }

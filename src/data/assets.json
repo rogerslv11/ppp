@@ -1,9 +1,8 @@
 {
   "hero": [
-    "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80"
+    "/imgs/serviços/5/WhatsApp Image 2026-07-21 at 17.35.53 (1).jpeg",
+    "/imgs/serviços/4/WhatsApp Image 2026-07-21 at 17.31.19.jpeg",
+    "/imgs/serviços/1/WhatsApp Image 2026-07-20 at 18.00.07.jpeg"
   ],
   "services": {
     "reformas": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80",
